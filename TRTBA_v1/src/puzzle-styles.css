@@ -1,0 +1,43 @@
+.diamond-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 65px 65px;
+    grid-template-rows: 65px 65px;
+    column-gap: 10px;
+    row-gap: 10px;
+    rotate: 45deg;
+}
+
+.diamond {
+    width: 60px;
+    height: 60px;
+    border: .6px solid;
+    border-color: white;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: transform .2s;
+}
+.diamond:hover {
+  transform: scale(1.1);
+}
+
+#gold {
+    background-color: gold;
+}
+
+#white {
+    background-color: white;
+}
+
+#gray {
+    background-color: gray;
+}
+
+#pink {
+    background-color: pink;
+}
+
+#turquoise {
+    background-color: turquoise;
+}

@@ -1,9 +1,9 @@
-
+import Puzzle1 from './Puzzle1'
 
 export default function Puzzles(){
     return (
         <div>
-            <h2>Puzzles go here.</h2>
+            <Puzzle1 />
         </div>
     )
 }
