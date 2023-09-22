@@ -22,22 +22,22 @@
   transform: scale(1.1);
 }
 
-#gold {
+.diamond.gold {
     background-color: gold;
 }
 
-#white {
+.diamond.white {
     background-color: white;
 }
 
-#gray {
+.diamond.gray {
     background-color: gray;
 }
 
-#pink {
+.diamond.pink {
     background-color: pink;
 }
 
-#turquoise {
+.diamond.turquoise {
     background-color: turquoise;
 }
