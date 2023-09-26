@@ -24,11 +24,11 @@ export default function App() {
   }
 
   return (
-    <div className='page-content'>
+    <>
         <Navigation 
           handleClick={handleClick}
         />
-
+    <div className='page-content'>
         <MainContent 
           handleClick={handleClick}
           clickVal={aTrig}
@@ -40,5 +40,6 @@ export default function App() {
           handleClick={handleClick}
         />
     </div>
+    </>
   )
 }

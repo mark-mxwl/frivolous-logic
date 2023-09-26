@@ -1,6 +1,7 @@
 import Puzzles from './Puzzles'
 import Lore from './Lore'
 import Games from './Games'
+import DevConnect from './DevConnect'
 
 export default function MainContent(props){
     const { clickVal, newQuote, quoteAuthor } = props
@@ -17,12 +18,16 @@ export default function MainContent(props){
             return (
                 <Games />
             )
+        } else if(clickVal === "dev-connect"){
+            return (
+                <DevConnect />
+            )
         } else {
             return (
                 <div>
                     <h1>THE RIGHT TO BE AWESOME.</h1><br />
                     <div className="quote-box">
-                        <h2>"{newQuote}"</h2>
+                        <h2 style={{color: 'silver'}}>"{newQuote}"</h2>
                         <h3>- {quoteAuthor}</h3>
                     </div>
                 </div>
