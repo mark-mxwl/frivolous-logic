@@ -25,7 +25,7 @@ export default function Puzzle1(){
             isHeld: false
         }
     ]
-    //this arr is SET with getRandomColors via useEffect
+    //this arr is POPULATED with getRandomColors via useEffect
     const [slotColor, setSlotColor] = useState([])
 
     //this arr is POPULATED by handleSlotClick and has a max length of 4 items (to determine winner)
@@ -51,15 +51,16 @@ export default function Puzzle1(){
         //          0
         //      2       1
         //          3
-        return colors.toSorted(() => .5 - Math.random()).slice(0, 4)
-        
+       return colors.toSorted(() => .5 - Math.random()).slice(0, 4)
     }
-
+    
     function handleSlotClick(e){
-        setSelectedColors(prev => [...prev, {value: `${e.target.id}`, isHeld: true}].slice(0, 4))
-        console.log(selectedColors)
-        console.log(e.target.id)
+        // setSelectedColors(prev => [...prev, {value: `${e.target.id}`, isHeld: true}].slice(0, 4))
 
+        //need to set e.target.id isHeld to true on click
+        setSelectedColors(slotColor)
+        console.log(e.target.id)
+        console.log(slotColor)
     }
 
     return (

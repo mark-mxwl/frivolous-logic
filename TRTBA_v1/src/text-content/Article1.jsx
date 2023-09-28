@@ -1,7 +1,7 @@
 
 export default function Article1(){
     return (
-        <div>
+        <div style={{color: 'gray'}}>
             <p>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
                 Accusamus fugit cum velit impedit ad ipsa, vitae, neque sed 
