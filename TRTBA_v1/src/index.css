@@ -50,6 +50,8 @@ nav {
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  flex-wrap: wrap;
+  text-align: left;
 }
 
 .def-box-content {
