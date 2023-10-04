@@ -7,14 +7,19 @@ nav {
   padding-left: 10px;
 }
 
+.img {
+  border: none;
+  border-radius: 5px;
+}
+
 .page-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  height:50vh;
-  margin-top:25vh;
+  height: 50vh;
+  margin-top: 25vh;
 }
 
 .content-box-layout-1 {
@@ -42,15 +47,19 @@ nav {
   right: 4vw;
   text-align: right;
   width: 22vw;
+  height: 60vh;
   margin-bottom: 30px;
   margin-top: -10vh;
+  padding-right: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .def-box-title {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
   flex-wrap: wrap;
+  align-items: baseline;
   text-align: left;
 }
 
@@ -70,12 +79,13 @@ nav {
   text-align: center;
   height: 45vh;
   width: 30vw;
+  min-width: fit-content;
   margin-top: auto;
   margin-bottom: auto;
   padding-bottom: 25px;
-  border-style: solid;
-  border-color: #36454F;
-  border-width: .5px;
+  border: .5px solid #36454F;
+  outline: .5px solid gray;
+  outline-offset: 10px;
   border-radius: 5px;
 }
 

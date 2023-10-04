@@ -4,7 +4,7 @@ import Games from './Games'
 import DevConnect from './DevConnect'
 
 export default function MainContent(props){
-    const { clickVal, newQuote, quoteAuthor } = props
+    const { handleClick, clickVal, newQuote, quoteAuthor } = props
     
     if(clickVal === "puzzles"){
             return (

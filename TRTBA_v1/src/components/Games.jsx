@@ -8,6 +8,7 @@ export default function Games(){
 
     function handleGameClick(e) {
         setSelectedGame(e.target.id)
+        console.log(e)
     }
 
     return (
@@ -16,7 +17,7 @@ export default function Games(){
                 id={selectedGame}
             />
             <div className="content-box-layout-3">
-                {gameTitles.map(game => <h3 style={{color: `#36454F`, fontSize: `.7em`}}><a id={game.id} onClick={handleGameClick}>{game.name}</a></h3>)}
+                {gameTitles.map(game => <h3 style={{color: `#36454F`, fontSize: `.7em`}}><a id={game.id} key={game.id} onClick={handleGameClick}>{game.name}</a></h3>)}
             </div>
         </>
     )

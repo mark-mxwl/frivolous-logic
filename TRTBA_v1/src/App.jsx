@@ -21,6 +21,7 @@ export default function App() {
 
   function handleClick(e){
     setATrig(e.target.id)
+    // console.log(e.target.id)
   }
 
   return (
@@ -28,7 +29,8 @@ export default function App() {
         <Navigation 
           handleClick={handleClick}
         />
-    <div className='page-content'>
+
+      <div className='page-content'>
         <MainContent 
           handleClick={handleClick}
           clickVal={aTrig}
@@ -39,7 +41,7 @@ export default function App() {
         <Footer 
           handleClick={handleClick}
         />
-    </div>
+      </div>
     </>
   )
 }

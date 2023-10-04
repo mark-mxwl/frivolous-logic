@@ -1,6 +1,18 @@
-import Article1 from '../text-content/Article1'
+import { useState, useEffect } from 'react'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { loreArray } from '../article-directory.js'
+import Article from './Article'
 
 export default function Lore(){
+
+    const [selectedArticle, setSelectedArticle] = useState()
+    
+    function handleLoreClick(e) {
+        const currentObj = loreArray.find(({ id }) => String(id) === e.target.id)
+        setSelectedArticle(currentObj)
+    }
+
+    console.log(selectedArticle)
     
     return (
         <>
@@ -16,10 +28,21 @@ export default function Lore(){
             </div>
         </div>
         <div className="content-box-layout-2">
-            <div className="def-box-title">
-                <h2 style={{color: `silver`}}>Puzzle Lore</h2>
-            </div>
-            <Article1 />
+            <Article 
+                title={selectedArticle?.title}
+                name={selectedArticle?.name}
+                id={selectedArticle?.id}
+                content={selectedArticle?.content}
+                urlSlug={selectedArticle?.urlSlug}
+            />
+        </div>
+        <div className='content-box-layout-3'>
+            {/* {loreArray.map(lore => <FontAwesomeIcon id={lore.id} key={lore.id} 
+            onClick={handleLoreClick} icon={lore.icon} className='social-icons' 
+            style={{color: `#36454F`}} />)} */}
+
+            {loreArray.map(lore => <h3 style={{color: `#36454F`, fontSize: `.7em`}}><a id={lore.id} key={lore.id} onClick={handleLoreClick}>{lore.name}</a></h3>)}
+
         </div>
         </>
     )

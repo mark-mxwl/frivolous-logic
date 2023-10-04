@@ -3,7 +3,7 @@ import { faCodeBranch } from '@fortawesome/free-solid-svg-icons'
 
 export default function Navigation(props){
     const { handleClick } = props
-    
+
     return (
         <header>
             <div className='header-container'>
@@ -12,9 +12,8 @@ export default function Navigation(props){
                 <button id="games" onClick={handleClick}>GAMES</button>
                 <button id="lore" onClick={handleClick}>LORE</button>
             </nav>
-            <div onClick={handleClick}>
-                <FontAwesomeIcon id="dev-connect" icon={faCodeBranch} className="social-icons" style={{height: 25, width: 25}}/>
-            </div>
+                <FontAwesomeIcon id="dev-connect" onClick={handleClick} icon={faCodeBranch} 
+                className="social-icons" style={{height: 25, width: 25}} />
             </div>
         </header>
     )
