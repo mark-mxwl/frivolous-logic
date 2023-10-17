@@ -1,7 +1,9 @@
-// import { faDragon, faScroll, faGhost, faSkullCrossbones, faDungeon, faBookSkull } from '@fortawesome/free-solid-svg-icons'
 
 import { mechPuzzleArticle1 } from "./text-content/article1"
-import { puzzleBoxArticle2 } from "./text-content/Article2"
+import { puzzleBoxArticle2 } from "./text-content/article2"
+import { puzzleArticle3 } from "./text-content/article3"
+import { towerOfHanoiArticle4 } from "./text-content/article4"
+import { mysticSquareArticle5 } from "./text-content/article5"
 
 export const loreArray = [
     {
@@ -19,31 +21,24 @@ export const loreArray = [
         urlSlug: "Puzzle_box"
     },
     {
-        title: "Title 3",
-        name: "Name 3",
+        title: "Puzzles Have a Curious Past",
+        name: "Puzzle",
         id: 3,
-        content: "article 3 goes here",
-        urlSlug: "slug_3"
+        content: puzzleArticle3,
+        urlSlug: "Puzzle"
     },
     {
-        title: "Title 4",
-        name: "Name 4",
+        title: "Tower of Hanoi",
+        name: "Tower of Hanoi",
         id: 4,
-        content: "article 4 goes here",
-        urlSlug: "slug_4"
+        content: towerOfHanoiArticle4,
+        urlSlug: "Tower_of_Hanoi"
     },
     {
-        title: "Title 5",
-        name: "Name 5",
+        title: "A Square with Many Names",
+        name: "Mystic Square",
         id: 5,
-        content: "article 5 goes here",
-        urlSlug: "slug_5"
-    },
-    {
-        title: "Title 6",
-        name: "Name 6",
-        id: 6,
-        content: "article 6 goes here",
-        urlSlug: "slug_6"
+        content: mysticSquareArticle5,
+        urlSlug: "15_Puzzle"
     }
 ]

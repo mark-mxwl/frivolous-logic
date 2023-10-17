@@ -8,9 +8,9 @@ export default function Footer(props){
         <footer>
             <div className='footer-container'>
                 <h3 style={{color: `#36454F`, fontSize: `.8em`}}>SOUND FX <a>ON</a>/<a>OFF</a></h3>
-                <div onClick={handleClick}>
+                <a id="puzzle-piece" onClick={handleClick}>
                     <FontAwesomeIcon icon={faPuzzlePiece} className="social-icons" />
-                </div>
+                </a>
                 <h3 style={{color: `#36454F`, fontSize: `.8em`}}>(c)2023 MVMXL</h3>
             </div>
         </footer>

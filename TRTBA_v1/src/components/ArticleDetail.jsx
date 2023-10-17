@@ -1,6 +1,6 @@
 
 
-export default function Article(props){
+export default function ArticleDetail(props){
 
     const { title, name, id, content, urlSlug } = props
 
