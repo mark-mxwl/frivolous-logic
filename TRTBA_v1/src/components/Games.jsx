@@ -7,22 +7,26 @@ export default function Games() {
 
   function handleGameClick(e) {
     setSelectedGame(e.target.id);
-    console.log(e);
+    // console.log(e);
   }
 
   return (
     <>
       <div className="page-content">
-        <GameDetail id={selectedGame} />
-        <div className="content-box-layout-3">
-          {gameTitles.map((game) => (
-            <h3 style={{ color: `#36454F`, fontSize: `.7em` }}>
-              <a id={game.id} key={game.id} onClick={handleGameClick}>
-                {game.name}
-              </a>
-            </h3>
-          ))}
+        <div className="dropdown">
+          <h2 style={{fontSize: '1em'}}>SELECT A GAME</h2>
+          <div className="dropdown-content">
+            {gameTitles.map((game) => (
+              <h3 style={{ fontSize: `.7em` }}>
+                <a id={game.id} key={game.id} onClick={handleGameClick}>
+                  {game.name}
+                </a>
+              </h3>
+            ))}
+          </div>
         </div>
+        <br />
+        <GameDetail id={selectedGame} />
       </div>
     </>
   );

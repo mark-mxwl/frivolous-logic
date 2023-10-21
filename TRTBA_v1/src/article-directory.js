@@ -11,34 +11,39 @@ export const loreArray = [
         name: "Mechanical Puzzle",
         id: 1,
         content: mechPuzzleArticle1,
-        urlSlug: "Mechanical_puzzle"
+        urlSlug: "Mechanical_puzzle",
+        icon: "1.svg"
     },
     {
         title: "Peculiar Roots of Puzzle Boxes",
         name: "Puzzle Box",
         id: 2,
         content: puzzleBoxArticle2,
-        urlSlug: "Puzzle_box"
+        urlSlug: "Puzzle_box",
+        icon: "2.svg"
     },
     {
         title: "Puzzles Have a Curious Past",
         name: "Puzzle",
         id: 3,
         content: puzzleArticle3,
-        urlSlug: "Puzzle"
+        urlSlug: "Puzzle",
+        icon: "3.svg"
     },
     {
         title: "Tower of Hanoi",
         name: "Tower of Hanoi",
         id: 4,
         content: towerOfHanoiArticle4,
-        urlSlug: "Tower_of_Hanoi"
+        urlSlug: "Tower_of_Hanoi",
+        icon: "4.svg"
     },
     {
         title: "A Square with Many Names",
         name: "Mystic Square",
         id: 5,
         content: mysticSquareArticle5,
-        urlSlug: "15_Puzzle"
+        urlSlug: "15_Puzzle",
+        icon: "5.svg"
     }
 ]

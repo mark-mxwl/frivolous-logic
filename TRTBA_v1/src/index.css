@@ -1,120 +1,3 @@
-
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  padding-top: 20px;
-  padding-left: 10px;
-}
-
-.img {
-  border: none;
-  border-radius: 5px;
-}
-
-.page-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  height: 50vh;
-  margin-top: 25vh;
-}
-
-.content-box-layout-1 {
-  position: fixed;
-  left: 4vw;
-  width: 22vw;
-  margin-bottom: 30px;
-  margin-top: -10vh;
-}
-
-.content-box-layout-2 {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-bottom: 100px;
-  text-align: left;
-  width: 40vw;
-  margin-top: -20px;
-}
-
-.content-box-layout-3 {
-  position: fixed;
-  right: 4vw;
-  text-align: right;
-  width: 22vw;
-  height: 60vh;
-  margin-bottom: 30px;
-  margin-top: -10vh;
-  padding-right: 10px;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.def-box-title {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: baseline;
-  text-align: left;
-}
-
-.def-box-content {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  text-align: left;
-  margin-top: -20px;
-}
-
-.puzzle-layout {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
-  height: 45vh;
-  width: 35vw;
-  min-width: 205px;
-  min-height: 300px;
-  margin-top: auto;
-  margin-bottom: auto;
-  padding-bottom: 25px;
-  border: .5px solid #36454F;
-  outline: 1px solid #36454F;
-  outline-offset: 7px;
-  border-radius: 5px;
-  background-color: #000000;
-}
-
-.quote-box {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 60%;
-  min-width: 20%;
-}
-
-.social-icons {
-  height: 40px;
-  width: 40px;
-  margin: 1em;
-  color: #D4B16A;
-  cursor: crosshair;
-  transition: transform .2s;
-}
-.social-icons:hover {
-  transform: scale(1.3);
-}
-
-.game-cover {
-  max-width: 50vw;
-  height: auto;
-}
-
 :root {
   max-width: 100vw;
   font-family: 'Inter', sans-serif;
@@ -126,7 +9,7 @@ nav {
   background-color: #000000;
   background-size: cover;
 }
-:root::after {
+  :root::after {
     content: "";
     background: url('assets/Maze_bg_1_simple_1920x1080-01.jpg');
     opacity: 0.12;
@@ -137,6 +20,12 @@ nav {
     position: fixed;
     z-index: -1;   
   }
+
+nav {
+  position: relative;
+  padding-top: 10px;
+  padding-left: 10px;
+}
 
 h1 {
   font-size: 2.5em;
@@ -160,23 +49,54 @@ p {
   font-family: 'Verdana', sans-serif;
 }
 
+img {
+  border: none;
+  border-radius: 5px;
+  width: inherit;
+  margin-bottom: 20px;
+}
+
 a {
-  color: inherit;
+  color: #36454F;
 }
-a:hover {
+  a:hover {
+    color: gray;
+    cursor: crosshair;
+  }
+  a:active {
+    color: silver;
+  }
+
+button {
+  border-radius: 5px;
+  border: .5px solid;
+  border-color: transparent;
   color: gray;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  font-size: 1em;
+  font-family: inherit;
+  background-color: transparent;
   cursor: crosshair;
+  transition: border-color .5s;
 }
-a:active {
-  color: silver;
-}
+  button:hover {
+    border-radius: 5px;
+    border: .5px solid;
+    border-color: #D4B16A;
+    transform: scale(1.1);
+  }
+  button:focus {
+    border-color: silver;
+    color: #36454F;
+  }
 
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 75px;
   background-color: #000000;
 }
 
@@ -195,13 +115,11 @@ footer {
   left: 0;
   width: 100%;
   height: 75px;
-  background-color: #000000;
-  border-top: #36454F;
-  border-left: black;
-  border-right: black;
-  border-style: solid;
-  border-width: .5px;
-  border-bottom-style: none;
+  background: linear-gradient(#36454F, #000000);
+  color: gray;
+}
+  footer:hover {
+    background: linear-gradient(0.0turn, #36454F, #000000);
 }
 
 .footer-container {
@@ -213,67 +131,243 @@ footer {
   margin-right: 15px;
 }
 
-button {
-  border-radius: 5px;
-  border: .6px solid;
-  border-color: #D4B16A;
+.page-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 60vh;
+  margin-top: 25vh;
+}
+
+.page-nav-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: -15vh;
+  margin-bottom: 10vh;
+  width: 60vw;
+
+}
+
+.content-box-layout-1 {
+  position: fixed;
+  left: 4vw;
+  width: 22vw;
+  margin-bottom: 30px;
+  margin-top: -10vh;
+}
+
+.content-box-layout-2 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-bottom: 100px;
+  text-align: left;
+  width: 60vw;
+  margin-top: -10vh;
+  width: 80vw;
+  padding-right: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.content-box-layout-3 {
+  position: fixed;
+  display: inline;
+  margin-top: 0;
+  padding: 10px;
+  width: 85vw;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+  .content-box-layout-3::-webkit-scrollbar {
+    width: 10px;
+  }
+  .content-box-layout-3::-webkit-scrollbar-track {
+    background: black;
+  }
+  .content-box-layout-3::-webkit-scrollbar-thumb {
+    background: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+.content-box-layout-4 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10px;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-bottom: 100px;
+  text-align: left;
+  width: 60vw;
+  margin-top: -10vh;
+}
+
+.dropdown {
+  position: fixed;
+  left: auto;
+  right: auto;
+  display: inline-block;
+  margin-top: -15vh;
+  margin-bottom: 10vh;
+  color: gray;
+}
+  .dropdown-content {
+    display: none;
+    position: relative;
+    background-color: black;
+    min-width: 160px;
+    height: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    overflow-y: auto;
+  }
+    .dropdown-content::-webkit-scrollbar {
+      width: 10px;
+    }
+    .dropdown-content::-webkit-scrollbar-track {
+      background: black;
+    }
+    .dropdown-content::-webkit-scrollbar-thumb {
+      background: none;
+      border: 1px solid gray;
+      border-radius: 5px;
+    }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown:hover {
+    color: #36454F;
+    cursor: crosshair;
+  }
+
+.def-box-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 400px;
+  text-align: left;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.quote-box {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60%;
+  min-width: 20%;
+}
+
+.social-icons {
+  height: 40px;
+  width: 40px;
+  margin: 1em;
   color: #D4B16A;
-  padding: 0.6em 1.2em;
-  margin: 0.6em;
-  font-size: 1em;
-  font-family: inherit;
-  background-color: transparent;
   cursor: crosshair;
-  transition: border-color 0.25s;
+  transition: transform .2s;
 }
-button:hover {
-  border-color: #ffffff;
-}
-button:focus {
-  border-color: #832C65;
-  border-width: 1.6px;
+  .social-icons:hover {
+    transform: scale(1.3);
+  }
+
+.puzzle-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  width: 400px;
+  height: 400px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-bottom: 40px;
+  border: .5px solid #36454F;
+  outline: 1px solid #36454F;
+  outline-offset: 7px;
+  border-radius: 5px;
+  background-color: #000000;
 }
 
 .diamond-container {
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-columns: 65px 65px;
-  grid-template-rows: 65px 65px;
+  grid-template-columns: 75px 75px;
+  grid-template-rows: 75px 75px;
   column-gap: 10px;
   row-gap: 10px;
   rotate: 45deg;
 }
 
 .diamond {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   border: .6px solid;
   border-color: white;
   border-radius: 5px;
   background-color: transparent;
   transition: transform .2s;
 }
-.diamond:hover {
-transform: scale(1.1);
-}
+  .diamond:hover {
+    transform: scale(1.1);
+  }
+  .diamond.gold {
+    background-color: gold;
+  }
+  .diamond.white {
+    background-color: white;
+  }
+  .diamond.gray {
+    background-color: gray;
+  }
+  .diamond.pink {
+    background-color: pink;
+  }
+  .diamond.turquoise {
+    background-color: turquoise;
+  }
 
-.diamond.gold {
-  background-color: gold;
-}
+@media screen and (max-width: 925px) {
+  
+  nav {
+    padding: 0;
+  }
 
-.diamond.white {
-  background-color: white;
-}
+  button {
+    padding: 0.3em .6em;
+    font-size: .8em;
+  }
 
-.diamond.gray {
-  background-color: gray;
-}
+  .header-container {
+    height: 75px;
+    justify-content: center;
+    align-items: center;
+  }
 
-.diamond.pink {
-  background-color: pink;
-}
+  .content-box-layout-1 {
+    position: fixed;
+    left: auto;
+    right: auto;
+    bottom: 15vh;
+    width: 85vw;
+    height: 100px;
+    line-height: 1.1em;
+  }
 
-.diamond.turquoise {
-  background-color: turquoise;
+  .def-box-content {
+    width: 300px;
+  }
+
+  .puzzle-layout {
+    width: 300px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

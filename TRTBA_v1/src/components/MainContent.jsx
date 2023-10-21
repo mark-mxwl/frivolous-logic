@@ -1,25 +1,23 @@
 import Puzzles from "./Puzzles";
 import Lore from "./Lore";
 import Games from "./Games";
-import DevConnect from "./DevConnect";
+import Connect from "./Connect";
 
 export default function MainContent(props) {
-  const { handleClick, clickVal, newQuote, quoteAuthor } = props;
+  const { aTrig, newQuote, quoteAuthor } = props;
 
-  if (clickVal === "puzzles") {
-    return (
-      <Puzzles />
-    )
-  } else if (clickVal === "lore") {
+  if (aTrig === "puzzles") {
+    return <Puzzles />
+  } else if (aTrig === "lore") {
     return <Lore />;
-  } else if (clickVal === "games") {
+  } else if (aTrig === "games") {
     return <Games />;
-  } else if (clickVal === "dev-connect") {
-    return <DevConnect />;
-  } else if (clickVal === "puzzle-piece"){
+  } else if (aTrig === "connect") {
+    return <Connect />;
+  } else {
     return (
       <div className="page-content" style={{justifyContent: 'space-evenly'}}>
-        <h1>THE RIGHT TO BE AWESOME.</h1>
+        <h1>FRIVOLOUS LOGIC BEARS GLORIOUS FRUIT.</h1>
         <div className="quote-box">
           <h2 style={{ color: "silver" }}>"{newQuote}"</h2>
           <h3>- {quoteAuthor}</h3>

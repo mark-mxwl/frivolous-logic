@@ -48,30 +48,26 @@ export default function Puzzles() {
   return (
     <>
       <div className="page-content">
-        <div className="content-box-layout-1">
-          <div className="def-box-title">
-            <h2 style={{ fontSize: `1.3em`, marginRight: 5 }}>{puzzleSelection.name}</h2>
-            <h3 style={{ color: "gray" }}>puzzle</h3>
-          </div>
-          <div className="def-box-content">
-            <h3 style={{ fontSize: `.8em`, color: `#805F15` }}>[by MVMXL]</h3>
-            <p style={{ fontSize: `.7em` }}>
-              {puzzleSelection.desc}
-            </p>
-          </div>
+        <div className="def-box-content">
+          <h2 style={{ fontSize: `1.3em` }}>{puzzleSelection.name}</h2>
+          <h3 style={{ fontSize: `.8em`, color: `gray`, marginTop: '0px'}}>[by MVMXL]</h3>
+          <p style={{ fontSize: `.8em` }}>
+            {puzzleSelection.desc}
+          </p>
         </div>
-        <div>
           {puzzleSelection.puzzle}
-        </div>
-        <div className="content-box-layout-3">
-          {puzzleArray.map((puzzle) => (
-              <h3 style={{ color: `#36454F`, fontSize: `.7em` }}>
-              <a id={puzzle.id} key={puzzle.id} onClick={handlePuzzleClick}>
-                {puzzle.name}
-              </a>
-            </h3>
-          ))}
-        </div>
+          <div className="dropdown">
+            <h2 style={{fontSize: '1em'}}>CHOOSE A PUZZLE</h2>
+              <div className="dropdown-content">
+                {puzzleArray.map((puzzle) => (
+                  <h3 style={{ fontSize: `.7em` }}>
+                  <a id={puzzle.id} key={puzzle.id} onClick={handlePuzzleClick}>
+                    {puzzle.name}
+                  </a>
+                  </h3>
+                ))}
+              </div>
+          </div>
       </div>
     </>
   );

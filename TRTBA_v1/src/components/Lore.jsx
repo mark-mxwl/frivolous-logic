@@ -8,28 +8,20 @@ export default function Lore() {
   function handleLoreClick(e) {
     const currentObj = loreArray.find(({ id }) => String(id) === e.target.id);
     setSelectedArticle(currentObj);
+    // console.log(currentObj)
   }
-
-  // console.log(selectedArticle)
 
   return (
     <>
       <div className="page-content">
-        <div className="content-box-layout-1">
-          <div className="def-box-title">
-            <h2 style={{ fontSize: `1.3em`, marginRight: 5 }}>puzzle</h2>
-            <h3 style={{ color: "gray" }}>noun</h3>
-          </div>
-          <div className="def-box-content">
-            <h3 style={{ fontSize: `.8em`, color: `#805F15` }}>[puh-zul]</h3>
-            <p style={{ fontSize: `.7em` }}>
-              2 a: something that puzzles
-              <br />
-              b: a question, problem, or contrivance designed for testing
-              ingenuity
-            </p>
-          </div>
+        <div className="page-nav-horizontal">
+          {loreArray.map((lore) => (
+            <button id={lore.id} key={lore.id} onClick={handleLoreClick} style={{padding: "0", transform: 'scale(1)'}}>
+              <img src={`./assets/logic_gate_icons/${lore.icon}`} id={lore.id} className="social-icons"/>
+            </button>
+          ))}
         </div>
+      <br />
         <div className="content-box-layout-2">
           <ArticleDetail
             title={selectedArticle?.title}
@@ -38,15 +30,6 @@ export default function Lore() {
             content={selectedArticle?.content}
             urlSlug={selectedArticle?.urlSlug}
           />
-        </div>
-        <div className="content-box-layout-3">
-          {loreArray.map((lore) => (
-            <h3 style={{ color: `#36454F`, fontSize: `.7em` }}>
-              <a id={lore.id} key={lore.id} onClick={handleLoreClick}>
-                {lore.name}
-              </a>
-            </h3>
-          ))}
         </div>
       </div>
     </>

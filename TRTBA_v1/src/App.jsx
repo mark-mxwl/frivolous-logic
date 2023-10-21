@@ -21,7 +21,7 @@ export default function App() {
 
   function handleClick(e) {
     setATrig(e.target.id);
-    console.log(e.target.id)
+    // console.log(e.target.id)
   }
 
   return (
@@ -30,7 +30,7 @@ export default function App() {
 
       <MainContent
         handleClick={handleClick}
-        clickVal={aTrig}
+        aTrig={aTrig}
         newQuote={randomQuote[0]?.content}
         quoteAuthor={randomQuote[0]?.author}
       />
