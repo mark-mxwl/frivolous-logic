@@ -16,8 +16,8 @@ export default function MainContent(props) {
     return <Connect />;
   } else {
     return (
-      <div className="page-content" style={{justifyContent: 'space-evenly'}}>
-        <h1>FRIVOLOUS LOGIC BEARS GLORIOUS FRUIT.</h1>
+      <div className="page-content" style={{justifyContent: 'space-evenly', marginTop: '18vh'}}>
+        <h1><span style={{color: 'silver'}}>FRIVOLOUS LOGIC</span> BEARS GLORIOUS FRUIT.</h1>
         <div className="quote-box">
           <h2 style={{ color: "silver" }}>"{newQuote}"</h2>
           <h3>- {quoteAuthor}</h3>

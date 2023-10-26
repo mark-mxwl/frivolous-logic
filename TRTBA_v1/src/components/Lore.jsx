@@ -22,7 +22,7 @@ export default function Lore() {
           ))}
         </div>
       <br />
-        <div className="content-box-layout-2">
+        <div className="content-container">
           <ArticleDetail
             title={selectedArticle?.title}
             name={selectedArticle?.name}

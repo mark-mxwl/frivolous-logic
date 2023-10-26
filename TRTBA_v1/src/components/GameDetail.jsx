@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGears } from "@fortawesome/free-solid-svg-icons";
 
 export default function GameDetail(props) {
   const [gameData, setGameData] = useState();
   const { id } = props;
+  const gears = <FontAwesomeIcon icon={faGears} class="social-icons" />
 
   async function getGames() {
     const response = await fetch(
@@ -16,8 +19,8 @@ export default function GameDetail(props) {
       }
     );
     const data = await response.json();
-
-    // console.log(data)
+    console.log(data)
+    console.log(data.screenshots_count)
     return data;
   }
 
@@ -29,7 +32,7 @@ export default function GameDetail(props) {
 
   return (
     <>    
-      <div className="content-box-layout-2">
+      <div className="content-container" style={{marginTop: '-60px'}}>
         <span>
         <h2 style={{ color: "silver" }}>{gameData?.name} ({gameData?.released.slice(0, 4)})</h2>
           <p style={{ fontSize: `.7em` }}>
@@ -49,7 +52,8 @@ export default function GameDetail(props) {
             {gameData?.stores.map((store) => store.store.name).join(", ")}
           </p>
         </span>
-        <img src={gameData?.background_image} />
+        <img src={gameData?.background_image} style={{ maxWidth: '720px' }} />
+        {/* <img src={gameData?.background_image_additional} /> */}
         <p style={{ color: "gray" }}>{gameData?.description_raw}</p>
       </div>
     </>

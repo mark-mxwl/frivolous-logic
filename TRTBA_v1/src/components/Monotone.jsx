@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay, faStop } from "@fortawesome/free-solid-svg-icons";
 
 export default function Monotone() {
-  // this arr is randomly SORTED by getRandomColors every second (via useEffect)
+  // this arr is randomly SORTED by getRandomColors (via useEffect)
   const [slotColor, setSlotColor] = useState([
     {
       id: 1,
@@ -34,67 +36,53 @@ export default function Monotone() {
   const [selectedColors, setSelectedColors] = useState([]);
 
   const [toggle, setToggle] = useState(false);
+  const [intervalDecrement, setIntervalDecrement] = useState();
 
   useEffect(() => {
     if (toggle === true) {
       const interval = setInterval(() => {
         setSlotColor(getRandomColors);
-      }, 1000);
+      }, intervalDecrement);
       return () => clearInterval(interval);
     }
   }, [getRandomColors]);
 
+  function getRandomColors() {
+    return slotColor.toSorted(() => 0.5 - Math.random());
+  }
+
   function handleStartClick(e) {
-    setToggle(true);
+    setToggle((prev) => !prev);
+    setIntervalDecrement(1000);
     getRandomColors();
   }
 
   function handleSlotClick(e) {
     const currentObj = slotColor.find(({ id }) => String(id) === e.target.id);
     setSelectedColors((prev) => [...prev, currentObj]);
-    console.log(currentObj);
-    console.log(selectedColors);
-  }
-
-  function getRandomColors() {
-    return slotColor.toSorted(() => 0.5 - Math.random());
+    setIntervalDecrement((prev) => prev - 250);
+    // console.log(currentObj);
+    // console.log(selectedColors);
   }
 
   return (
-    <div className="puzzle-layout">
-      <button id="start-btn" onClick={handleStartClick}>
-        Start Game
-      </button>
-      <br />
+    <div className="puzzle-container">
+      <FontAwesomeIcon 
+        icon={toggle ? faStop : faPlay}
+        id="start-btn"
+        className="social-icons"
+        onClick={handleStartClick}
+      />
       <div className="diamond-container">
-        <div
-          id={slotColor[0]?.id}
-          className={`diamond ${
-            selectedColors[0]?.value || slotColor[0]?.value
-          }`}
-          onClick={handleSlotClick}
-        ></div>
-        <div
-          id={slotColor[1]?.id}
-          className={`diamond ${
-            selectedColors[1]?.value || slotColor[1]?.value
-          }`}
-          onClick={handleSlotClick}
-        ></div>
-        <div
-          id={slotColor[2]?.id}
-          className={`diamond ${
-            selectedColors[2]?.value || slotColor[2]?.value
-          }`}
-          onClick={handleSlotClick}
-        ></div>
-        <div
-          id={slotColor[3]?.id}
-          className={`diamond ${
-            selectedColors[3]?.value || slotColor[3]?.value
-          }`}
-          onClick={handleSlotClick}
-        ></div>
+        {slotColor.map((color) => {
+          return (
+            <div
+            id={color.id}
+            className={toggle ? `diamond ${color.value}` : 'diamond'}
+            onClick={handleSlotClick}
+            ></div>
+          )
+        }).slice(0, 4)}
       </div>
     </div>
   );

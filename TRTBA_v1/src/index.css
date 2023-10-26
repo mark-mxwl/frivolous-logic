@@ -57,21 +57,21 @@ img {
 }
 
 a {
-  color: #36454F;
+  color: gray;
 }
   a:hover {
-    color: gray;
+    color: silver;
     cursor: crosshair;
   }
   a:active {
-    color: silver;
+    color: #36454F;
   }
 
 button {
   border-radius: 5px;
   border: .5px solid;
   border-color: transparent;
-  color: gray;
+  color: silver;
   padding: 0.5em 1em;
   margin: 0.5em;
   font-size: 1em;
@@ -115,11 +115,24 @@ footer {
   left: 0;
   width: 100%;
   height: 75px;
-  background: linear-gradient(#36454F, #000000);
   color: gray;
+  background-image: linear-gradient(#36454F, #000000);
+  z-index: 1;
 }
-  footer:hover {
-    background: linear-gradient(0.0turn, #36454F, #000000);
+  footer::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(0.0turn, #36454F, #000000);
+    z-index: -1;
+    transition: opacity 0.5s linear;
+    opacity: 0;
+  }
+  footer:hover::before {
+    opacity: 1;
 }
 
 .footer-container {
@@ -131,6 +144,13 @@ footer {
   margin-right: 15px;
 }
 
+.page-nav-horizontal {
+  display: inline;
+  margin-top: -125px;
+  margin-bottom: 75px;
+  width: 80vw;
+}
+
 .page-content {
   display: flex;
   flex-direction: column;
@@ -138,28 +158,10 @@ footer {
   align-items: center;
   text-align: center;
   height: 60vh;
-  margin-top: 25vh;
+  margin-top: 200px;
 }
 
-.page-nav-horizontal {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-top: -15vh;
-  margin-bottom: 10vh;
-  width: 60vw;
-
-}
-
-.content-box-layout-1 {
-  position: fixed;
-  left: 4vw;
-  width: 22vw;
-  margin-bottom: 30px;
-  margin-top: -10vh;
-}
-
-.content-box-layout-2 {
+.content-container {
   display: flex;
   flex-wrap: wrap;
   margin-left: auto;
@@ -168,44 +170,12 @@ footer {
   padding-bottom: 100px;
   text-align: left;
   width: 60vw;
-  margin-top: -10vh;
+  max-width: 720px;
+  margin-top: -100px;
   width: 80vw;
   padding-right: 20px;
   overflow-x: hidden;
   overflow-y: auto;
-}
-
-.content-box-layout-3 {
-  position: fixed;
-  display: inline;
-  margin-top: 0;
-  padding: 10px;
-  width: 85vw;
-  overflow-x: auto;
-  overflow-y: auto;
-}
-  .content-box-layout-3::-webkit-scrollbar {
-    width: 10px;
-  }
-  .content-box-layout-3::-webkit-scrollbar-track {
-    background: black;
-  }
-  .content-box-layout-3::-webkit-scrollbar-thumb {
-    background: none;
-    border: 1px solid gray;
-    border-radius: 5px;
-  }
-
-.content-box-layout-4 {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 10px;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-bottom: 100px;
-  text-align: left;
-  width: 60vw;
-  margin-top: -10vh;
 }
 
 .dropdown {
@@ -213,9 +183,8 @@ footer {
   left: auto;
   right: auto;
   display: inline-block;
-  margin-top: -15vh;
-  margin-bottom: 10vh;
-  color: gray;
+  margin-top: -115px;
+  color: silver;
 }
   .dropdown-content {
     display: none;
@@ -243,17 +212,15 @@ footer {
     display: block;
   }
   .dropdown:hover {
-    color: #36454F;
+    color: gray;
     cursor: crosshair;
   }
 
 .def-box-content {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 400px;
+  display: block;
+  width: 300px;
   text-align: left;
-  margin-top: -20px;
+  margin-top: -70px;
   margin-bottom: 20px;
 }
 
@@ -276,14 +243,22 @@ footer {
     transform: scale(1.3);
   }
 
-.puzzle-layout {
+.sound-on {
+  color: silver;
+}
+
+.sound-off {
+  color: #36454F;
+}
+
+.puzzle-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
-  width: 400px;
-  height: 400px;
+  min-width: 300px;
+  min-height: 300px;
   margin-top: auto;
   margin-bottom: auto;
   padding-bottom: 40px;
@@ -350,24 +325,4 @@ footer {
     align-items: center;
   }
 
-  .content-box-layout-1 {
-    position: fixed;
-    left: auto;
-    right: auto;
-    bottom: 15vh;
-    width: 85vw;
-    height: 100px;
-    line-height: 1.1em;
-  }
-
-  .def-box-content {
-    width: 300px;
-  }
-
-  .puzzle-layout {
-    width: 300px;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }

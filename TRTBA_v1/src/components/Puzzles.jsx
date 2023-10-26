@@ -8,32 +8,21 @@ export default function Puzzles() {
       name: "Monotone",
       id: 1,
       desc: "1 a: set all rotating slots to the same color--if you can.",
-      puzzle: <Monotone />
+      puzzle: <Monotone />,
+      icon: "monotone_icon.svg",
+      author: "MVMXL"
     },
     {
-      name: "Puzzle 2",
+      name: "Mystic Square",
       id: 2,
-      desc: "puzzle 2 description",
+      desc: "Coming soon!",
+      author: "???"
     },
     {
-      name: "Puzzle 3",
+      name: "2048",
       id: 3,
-      desc: "puzzle 3 description",
-    },
-    {
-      name: "Puzzle 4",
-      id: 4,
-      desc: "puzzle 4 description",
-    },
-    {
-      name: "Puzzle 5",
-      id: 5,
-      desc: "puzzle 5 description",
-    },
-    {
-      name: "Puzzle 6",
-      id: 6,
-      desc: "puzzle 6 description",
+      desc: "Coming soon!",
+      author: "???"
     }
   ];
 
@@ -48,26 +37,19 @@ export default function Puzzles() {
   return (
     <>
       <div className="page-content">
+        <div className="page-nav-horizontal">
+          <button id={puzzleSelection.id} onClick={handlePuzzleClick} style={{ transform: 'scale(1)', padding: '0.3em .6em' }}>
+            <img src={`./assets/puzzle_icons/${puzzleSelection.icon}`} id={puzzleSelection.id} className="social-icons" />
+          </button>
+        </div>
         <div className="def-box-content">
           <h2 style={{ fontSize: `1.3em` }}>{puzzleSelection.name}</h2>
-          <h3 style={{ fontSize: `.8em`, color: `gray`, marginTop: '0px'}}>[by MVMXL]</h3>
+          <h3 style={{ fontSize: `.8em`, color: `gray`}}>[by {puzzleSelection.author}]</h3>
           <p style={{ fontSize: `.8em` }}>
             {puzzleSelection.desc}
           </p>
         </div>
           {puzzleSelection.puzzle}
-          <div className="dropdown">
-            <h2 style={{fontSize: '1em'}}>CHOOSE A PUZZLE</h2>
-              <div className="dropdown-content">
-                {puzzleArray.map((puzzle) => (
-                  <h3 style={{ fontSize: `.7em` }}>
-                  <a id={puzzle.id} key={puzzle.id} onClick={handlePuzzleClick}>
-                    {puzzle.name}
-                  </a>
-                  </h3>
-                ))}
-              </div>
-          </div>
       </div>
     </>
   );
