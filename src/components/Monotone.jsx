@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faStop } from "@fortawesome/free-solid-svg-icons";
 
 export default function Monotone() {
-  // this arr is randomly SORTED by getRandomColors (via useEffect)
+
   const [slotColor, setSlotColor] = useState([
     {
       id: 1,
@@ -22,21 +22,16 @@ export default function Monotone() {
     },
     {
       id: 4,
-      value: "pink",
-      isHeld: false,
-    },
-    {
-      id: 5,
       value: "turquoise",
       isHeld: false,
     },
   ]);
 
-  // this arr is POPULATED by handleSlotClick
-  const [selectedColors, setSelectedColors] = useState([]);
-
   const [toggle, setToggle] = useState(false);
   const [intervalDecrement, setIntervalDecrement] = useState();
+  const [winningColor, setWinningColor] = useState(["red", "blue", "purple", "green"]);
+  const winningMessage = "YOU WIN!"
+  const styles = {padding: '0.4em .8em', fontSize: '.9em'}
 
   useEffect(() => {
     if (toggle === true) {
@@ -49,21 +44,38 @@ export default function Monotone() {
 
   function getRandomColors() {
     return slotColor.toSorted(() => 0.5 - Math.random());
+  };
+
+  function getWinningColor() {
+    return winningColor.toSorted(() => 0.5 - Math.random())
   }
 
   function handleStartClick(e) {
     setToggle((prev) => !prev);
-    setIntervalDecrement(1000);
+    setIntervalDecrement(900);
+    setSlotColor((prevSlots) => prevSlots.map((slot) => {
+      return (
+      {...slot, isHeld: false}
+      )}
+    ));
     getRandomColors();
-  }
+    setWinningColor(getWinningColor)
+    
+    console.log(slotColor)
+  };
 
   function handleSlotClick(e) {
-    const currentObj = slotColor.find(({ id }) => String(id) === e.target.id);
-    setSelectedColors((prev) => [...prev, currentObj]);
-    setIntervalDecrement((prev) => prev - 250);
-    // console.log(currentObj);
-    // console.log(selectedColors);
-  }
+    const currentObj = slotColor.find(({ id, isHeld }) => String(id) === e.target.id && isHeld === isHeld);
+    const index = currentObj.id;
+
+    setIntervalDecrement((prev) => prev >= 300 ? prev - 150 : prev === 150);
+    setSlotColor((prevSlots) => prevSlots.map((slot) => {
+      return (
+        slot.id === index ?
+      {...slot, isHeld: true} : slot
+      )}
+    ));
+  };
 
   return (
     <div className="puzzle-container">
@@ -73,17 +85,37 @@ export default function Monotone() {
         className="social-icons"
         onClick={handleStartClick}
       />
-      <div className="diamond-container">
-        {slotColor.map((color) => {
-          return (
-            <div
-            id={color.id}
-            className={toggle ? `diamond ${color.value}` : 'diamond'}
-            onClick={handleSlotClick}
-            ></div>
-          )
-        }).slice(0, 4)}
-      </div>
+      {slotColor.every(color => color.isHeld === true) ? 
+        <div style={{margin: 'auto', padding: 0}}>
+          <h2>{winningMessage}</h2>
+          <button onClick={handleStartClick} style={styles}>Play Again?</button>
+        </div> 
+        : 
+        <div className="diamond-container">
+          {toggle === true ? slotColor.map((color) => {
+            return (
+              <div
+                id={color.id}
+                key={color.id}
+                className={color.isHeld ? `diamond ${winningColor[0]}` : `diamond ${color.value}`}
+                onClick={handleSlotClick}
+              ></div>
+            )
+            })
+            :
+            slotColor.map((color) => {
+              return (
+                <div
+                  id={color.id}
+                  key={color.id}
+                  className={`diamond`}
+                  onClick={handleSlotClick}
+                ></div>
+              )
+            })
+          }
+        </div>
+      }
     </div>
   );
-}
+};

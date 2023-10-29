@@ -7,7 +7,7 @@ export default function Puzzles() {
     {
       name: "Monotone",
       id: 1,
-      desc: "1 a: set all rotating slots to the same color--if you can.",
+      desc: "Click PLAY, then click a slot. Set all rotating slots to the color that appears.",
       puzzle: <Monotone />,
       icon: "monotone_icon.svg",
       author: "MVMXL"
@@ -44,8 +44,8 @@ export default function Puzzles() {
         </div>
         <div className="def-box-content">
           <h2 style={{ fontSize: `1.3em` }}>{puzzleSelection.name}</h2>
-          <h3 style={{ fontSize: `.8em`, color: `gray`}}>[by {puzzleSelection.author}]</h3>
-          <p style={{ fontSize: `.8em` }}>
+          <h3 style={{ color: `gray`}}>[by {puzzleSelection.author}]</h3>
+          <p>
             {puzzleSelection.desc}
           </p>
         </div>
