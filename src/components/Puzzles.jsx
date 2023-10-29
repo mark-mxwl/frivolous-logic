@@ -7,7 +7,7 @@ export default function Puzzles() {
     {
       name: "Monotone",
       id: 1,
-      desc: "Click PLAY, then click a slot. Set all rotating slots to the color that appears.",
+      desc: "Click PLAY, click a slot. Set all slots to the color that appears on your first click.",
       puzzle: <Monotone />,
       icon: "monotone_icon.svg",
       author: "MVMXL"
@@ -26,11 +26,11 @@ export default function Puzzles() {
     }
   ];
 
-  const [puzzleSelection, setPuzzleSelection] = useState(puzzleArray[0])
+  const [puzzleSelection, setPuzzleSelection] = useState(puzzleArray[0]);
 
   function handlePuzzleClick(e) {
     const currentObj = puzzleArray.find(({ id }) => String(id) === e.target.id);
-    setPuzzleSelection(currentObj)
+    setPuzzleSelection(currentObj);
     // console.log(e);
   }
 
@@ -43,8 +43,8 @@ export default function Puzzles() {
           </button>
         </div>
         <div className="def-box-content">
-          <h2 style={{ fontSize: `1.3em` }}>{puzzleSelection.name}</h2>
-          <h3 style={{ color: `gray`}}>[by {puzzleSelection.author}]</h3>
+          <h2 style={{ fontSize: '1.3em' }}>{puzzleSelection.name}</h2>
+          <h3 style={{ color: 'gray' }}>[by {puzzleSelection.author}]</h3>
           <p>
             {puzzleSelection.desc}
           </p>
@@ -53,4 +53,4 @@ export default function Puzzles() {
       </div>
     </>
   );
-}
+};

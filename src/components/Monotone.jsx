@@ -52,7 +52,7 @@ export default function Monotone() {
 
   function handleStartClick(e) {
     setToggle((prev) => !prev);
-    setIntervalDecrement(900);
+    setIntervalDecrement(800);
     setSlotColor((prevSlots) => prevSlots.map((slot) => {
       return (
       {...slot, isHeld: false}
@@ -68,7 +68,7 @@ export default function Monotone() {
     const currentObj = slotColor.find(({ id, isHeld }) => String(id) === e.target.id && isHeld === isHeld);
     const index = currentObj.id;
 
-    setIntervalDecrement((prev) => prev >= 300 ? prev - 150 : prev === 150);
+    setIntervalDecrement((prev) => prev >= 400 ? prev - 100 : prev);
     setSlotColor((prevSlots) => prevSlots.map((slot) => {
       return (
         slot.id === index ?
@@ -98,6 +98,7 @@ export default function Monotone() {
                 id={color.id}
                 key={color.id}
                 className={color.isHeld ? `diamond ${winningColor[0]}` : `diamond ${color.value}`}
+                style={{cursor: 'crosshair'}}
                 onClick={handleSlotClick}
               ></div>
             )
@@ -109,6 +110,7 @@ export default function Monotone() {
                   id={color.id}
                   key={color.id}
                   className={`diamond`}
+                  style={{cursor: 'crosshair'}}
                   onClick={handleSlotClick}
                 ></div>
               )

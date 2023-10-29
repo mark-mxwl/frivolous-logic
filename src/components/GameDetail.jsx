@@ -18,8 +18,8 @@ export default function GameDetail(props) {
       }
     );
     const data = await response.json();
-    console.log(data)
-    console.log(data.screenshots_count)
+    // console.log(data)
+    // console.log(data.screenshots_count)
     return data;
   }
 
@@ -33,8 +33,8 @@ export default function GameDetail(props) {
     <>    
       <div className="content-container" style={{marginTop: '-60px'}}>
         <span>
-        <h2 style={{ color: "silver" }}>{gameData?.name} ({gameData?.released.slice(0, 4)})</h2>
-          <p style={{ fontSize: `.7em` }}>
+        <h2 style={{ color: 'silver' }}>{gameData?.name} ({gameData?.released.slice(0, 4)})</h2>
+          <p style={{ fontSize: '.7em' }}>
             <b>STUDIO:</b>{" "}
             {gameData?.developers.map((developer) => developer.name).join(", ")}
             <br />
@@ -52,7 +52,7 @@ export default function GameDetail(props) {
           </p>
         </span>
         <img src={gameData?.background_image} style={{ maxWidth: '720px' }} />
-        <p style={{ color: "gray" }}>{gameData?.description_raw}</p>
+        <p style={{ color: 'gray' }}>{gameData?.description_raw}</p>
         <p style={styles}>Game data sourced from {" "} 
           <a href="https://rawg.io/apidocs" target="_blank">RAWG API</a>
         </p>

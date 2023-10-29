@@ -11,7 +11,7 @@
 }
   :root::after {
     content: "";
-    background: url('assets/Maze_bg_1_simple_1920x1080-01.jpg');
+    background: url('assets/Firefly-isometric-maze-black-gray-gold-vintage-effect-14075.jpg');
     opacity: 0.12;
     top: 0;
     left: 0;
@@ -218,7 +218,7 @@ footer {
 
 .def-box-content {
   display: block;
-  width: 300px;
+  width: 325px;
   text-align: left;
   margin-top: -70px;
   margin-bottom: 20px;
@@ -257,7 +257,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  min-width: 300px;
+  min-width: 325px;
   min-height: 300px;
   margin-top: auto;
   margin-bottom: auto;
