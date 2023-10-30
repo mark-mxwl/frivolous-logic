@@ -18,7 +18,7 @@ export default function Lore() {
         <div className="page-nav-horizontal">
           {loreArray.map((lore) => (
             <button id={lore.id} key={lore.id} onClick={handleLoreClick} style={styles}>
-              <img src={`/src/assets/logic_gate_icons/${lore.icon}`} id={lore.id} className="social-icons"/>
+              <img src={`src/assets/logic_gate_icons/${lore.icon}`} id={lore.id} className="social-icons"/>
             </button>
           ))}
         </div>
