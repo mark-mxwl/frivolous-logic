@@ -39,7 +39,7 @@ export default function Puzzles() {
       <div className="page-content">
         <div className="page-nav-horizontal">
           <button id={puzzleSelection.id} onClick={handlePuzzleClick} style={{ transform: 'scale(1)', padding: '0.3em .6em' }}>
-            <img src={`src/assets/puzzle_icons/${puzzleSelection.icon}`} id={puzzleSelection.id} className="social-icons" />
+            <img src={`icons/${puzzleSelection.icon}`} id={puzzleSelection.id} className="social-icons" />
           </button>
         </div>
         <div className="def-box-content">

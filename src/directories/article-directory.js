@@ -12,7 +12,7 @@ export const loreArray = [
         id: 1,
         content: mechPuzzleArticle1,
         urlSlug: "Mechanical_puzzle",
-        icon: "1.svg"
+        icon: "logic_gate_icon_1.svg"
     },
     {
         title: "Peculiar Roots of Puzzle Boxes",
@@ -20,7 +20,7 @@ export const loreArray = [
         id: 2,
         content: puzzleBoxArticle2,
         urlSlug: "Puzzle_box",
-        icon: "2.svg"
+        icon: "logic_gate_icon_2.svg"
     },
     {
         title: "Puzzles Have a Curious Past",
@@ -28,7 +28,7 @@ export const loreArray = [
         id: 3,
         content: puzzleArticle3,
         urlSlug: "Puzzle",
-        icon: "3.svg"
+        icon: "logic_gate_icon_3.svg"
     },
     {
         title: "Tower of Hanoi",
@@ -36,7 +36,7 @@ export const loreArray = [
         id: 4,
         content: towerOfHanoiArticle4,
         urlSlug: "Tower_of_Hanoi",
-        icon: "4.svg"
+        icon: "logic_gate_icon_4.svg"
     },
     {
         title: "A Square with Many Names",
@@ -44,6 +44,6 @@ export const loreArray = [
         id: 5,
         content: mysticSquareArticle5,
         urlSlug: "15_Puzzle",
-        icon: "5.svg"
+        icon: "logic_gate_icon_5.svg"
     }
 ]
