@@ -48,8 +48,8 @@ export default function Puzzles() {
           <p>
             {puzzleSelection.desc}
           </p>
-        </div>
-          {puzzleSelection.puzzle}
+            {puzzleSelection.puzzle}
+          </div>
       </div>
     </>
   );

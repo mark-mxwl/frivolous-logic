@@ -164,16 +164,11 @@ footer {
 .content-container {
   display: flex;
   flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-bottom: 100px;
+  margin: -100px auto 0px auto;
+  padding: 0px 20px 100px 20px;
   text-align: left;
-  width: 60vw;
-  max-width: 720px;
-  margin-top: -100px;
   width: 80vw;
-  padding-right: 20px;
+  max-width: 720px;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -218,10 +213,12 @@ footer {
 
 .def-box-content {
   display: block;
-  width: 325px;
+  width: 330px;
   text-align: left;
   margin-top: -70px;
-  margin-bottom: 20px;
+  padding: 0px 20px 100px 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .quote-box {
@@ -257,10 +254,9 @@ footer {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  min-width: 325px;
-  min-height: 300px;
-  margin-top: auto;
-  margin-bottom: auto;
+  width: 300px;
+  height: 300px;
+  margin-top: 20px;
   padding-bottom: 40px;
   border: .5px solid #36454F;
   outline: 1px solid #36454F;
