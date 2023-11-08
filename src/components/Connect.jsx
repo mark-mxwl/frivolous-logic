@@ -8,8 +8,8 @@ export default function DevConnect() {
     <div className="page-content">
       <div className="content-container">
         <p>
-          <i>Frivolous Logic</i> was created by frontend engineer/developer Mark Maxwell 
-          using JavaScript, React, HTML, CSS, and Vite. Data is consumed from{" "}
+          <i>Frivolous Logic</i> was created by frontend engineer Mark Maxwell 
+          using JavaScript, React, CSS, and Vite. Data is consumed from{" "}
           <a href="https://rawg.io/apidocs" style={styles}>
             Rawg API
           </a>{" "}
@@ -17,11 +17,14 @@ export default function DevConnect() {
           <a href="https://github.com/lukePeavey/quotable" style={styles}>
             Quotable API
           </a>.
-          Additional content is gathered from Wikipedia under the Creative 
-          Commons Attribution-Share-Alike License 4.0.
+          Additional content is gathered from Wikipedia under {" "}
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" style={styles}>
+            CC BY-SA 4.0
+          </a>.
         </p>
         <p>
-          To contribute to <i>Frivolous Logic</i>, connect with Mark on{" "}
+          This project is actively in development. To contribute to 
+          {" "}<i>Frivolous Logic</i>, connect with Mark on{" "}
           <a href="https://github.com/mark-mxwl" style={styles}>
             GitHub
           </a>{" "}

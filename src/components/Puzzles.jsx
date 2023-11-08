@@ -7,7 +7,7 @@ export default function Puzzles() {
     {
       name: "Monotone",
       id: 1,
-      desc: "Click PLAY, click a slot. Set all slots to the color that appears on your first click.",
+      desc: "Click PLAY. Set all slots to the color that appears on your first click.",
       puzzle: <Monotone />,
       icon: "monotone_icon.svg",
       author: "MVMXL"
@@ -37,19 +37,16 @@ export default function Puzzles() {
   return (
     <>
       <div className="page-content">
-        <div className="page-nav-horizontal">
-          <button id={puzzleSelection.id} onClick={handlePuzzleClick} style={{ transform: 'scale(1)', padding: '0.3em .6em' }}>
-            <img src={`icons/${puzzleSelection.icon}`} id={puzzleSelection.id} className="social-icons" />
-          </button>
-        </div>
-        <div className="def-box-content">
+        <div className="puzzle-presentation-card">
           <h2 style={{ fontSize: '1.3em' }}>{puzzleSelection.name}</h2>
           <h3 style={{ color: 'gray' }}>[by {puzzleSelection.author}]</h3>
           <p>
             {puzzleSelection.desc}
           </p>
+          <div style={{marginTop: '100px'}}>
             {puzzleSelection.puzzle}
           </div>
+        </div>
       </div>
     </>
   );

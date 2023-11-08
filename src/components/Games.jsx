@@ -16,9 +16,9 @@ export default function Games() {
     <>
       <div className="page-content">
         <div className="dropdown">
-          <h2 style={{fontSize: '1em'}}>
+          <h2 style={{fontSize: '.9em'}}>
             <span className="social-icons" style={{color: "gray"}}><FontAwesomeIcon icon={faBars} />
-            </span>SELECT A GAME</h2>
+            </span>PUZZLE-BASED VIDEO GAMES</h2>
           <div className="dropdown-content">
             {gameTitles.map((game) => (
               <h3 style={{ fontSize: `.7em` }}>
