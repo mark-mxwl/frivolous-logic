@@ -1,29 +1,30 @@
 import { useState, useEffect } from "react";
 import { loreArray } from "../directories/article-directory.js";
 import ArticleDetail from "./ArticleDetail";
+import LoreCard from "./LoreCard.jsx"
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Lore() {
-  const [selectedArticle, setSelectedArticle] = useState(loreArray[0]);
-  const styles = {padding: "0", transform: 'scale(1)'}
-
+  const [selectedArticle, setSelectedArticle] = useState();
+  let i = 0
+  
   function handleLoreClick(e) {
     const currentObj = loreArray.find(({ id }) => String(id) === e.target.id);
     setSelectedArticle(currentObj);
     // console.log(currentObj)
   }
 
+  function handleArrowClick() {
+    setSelectedArticle()
+  }
+
   return (
+    selectedArticle ?
     <>
       <div className="page-content">
-        <div className="page-nav-horizontal">
-          {loreArray.map((lore) => (
-            <button id={lore.id} key={lore.id} onClick={handleLoreClick} style={styles}>
-              <img src={`icons/${lore.icon}`} id={lore.id} className="social-icons"/>
-            </button>
-          ))}
-        </div>
-      <br />
         <div className="content-container">
+          <FontAwesomeIcon icon={faArrowLeft} className="social-icons" onClick={handleArrowClick} />
           <ArticleDetail
             title={selectedArticle?.title}
             name={selectedArticle?.name}
@@ -32,6 +33,28 @@ export default function Lore() {
             urlSlug={selectedArticle?.urlSlug}
           />
         </div>
+      </div>
+    </>
+      :
+    <>
+      <div className="page-content-alt">
+        {loreArray.map(lore => {
+          return (
+              <LoreCard
+                i={i <= 4 && i++}
+                handleLoreClick={handleLoreClick}
+                title={lore.title}
+                name={lore.name}
+                id={lore.id}
+                key={`${lore.id}--key`}
+                content={lore.content}
+                urlSlug={lore.urlSlug}
+                icon={lore.icon}
+                image={lore.image}
+              />
+          )
+          })
+        }
       </div>
     </>
   );

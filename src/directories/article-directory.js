@@ -12,7 +12,8 @@ export const loreArray = [
         id: 1,
         content: mechPuzzleArticle1,
         urlSlug: "Mechanical_puzzle",
-        icon: "logic_gate_icon_1.svg"
+        icon: "logic_gate_icon_1.svg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/PuzzleByAltekruse.jpg/440px-PuzzleByAltekruse.jpg"
     },
     {
         title: "Peculiar Roots of Puzzle Boxes",
@@ -20,7 +21,8 @@ export const loreArray = [
         id: 2,
         content: puzzleBoxArticle2,
         urlSlug: "Puzzle_box",
-        icon: "logic_gate_icon_2.svg"
+        icon: "logic_gate_icon_2.svg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Yosegi_3.jpg/440px-Yosegi_3.jpg"
     },
     {
         title: "Puzzles Have a Curious Past",
@@ -28,7 +30,8 @@ export const loreArray = [
         id: 3,
         content: puzzleArticle3,
         urlSlug: "Puzzle",
-        icon: "logic_gate_icon_3.svg"
+        icon: "logic_gate_icon_3.svg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Raetselkreuz.jpg/440px-Raetselkreuz.jpg"
     },
     {
         title: "Tower of Hanoi",
@@ -36,7 +39,8 @@ export const loreArray = [
         id: 4,
         content: towerOfHanoiArticle4,
         urlSlug: "Tower_of_Hanoi",
-        icon: "logic_gate_icon_4.svg"
+        icon: "logic_gate_icon_4.svg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Tower_of_Hanoi.jpeg/600px-Tower_of_Hanoi.jpeg"
     },
     {
         title: "A Square with Many Names",
@@ -44,6 +48,7 @@ export const loreArray = [
         id: 5,
         content: mysticSquareArticle5,
         urlSlug: "15_Puzzle",
-        icon: "logic_gate_icon_5.svg"
+        icon: "logic_gate_icon_5.svg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/15-Puzzle_solved.png/440px-15-Puzzle_solved.png"
     }
 ]

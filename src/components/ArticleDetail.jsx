@@ -13,13 +13,13 @@ export default function ArticleDetail(props){
         <p style={{color: 'gray', fontSize: '.7em', fontStyle: 'italic'}}>
           This article uses material from the Wikipedia article{" "}
         {
-          <a href={`https://en.wikipedia.org/wiki/${urlSlug}`}>
+          <a href={`https://en.wikipedia.org/wiki/${urlSlug}`} target='_blank'>
             {`${name}`}
           </a>
         }
         , which is released under the{" "}
         {
-          <a href="https://creativecommons.org/licenses/by-sa/4.0/">
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target='_blank'>
             Creative Commons Attribution-Share-Alike License 4.0
           </a>
         }

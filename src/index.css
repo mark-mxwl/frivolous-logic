@@ -160,6 +160,17 @@ footer {
   padding-top: 85px;
 }
 
+.page-content-alt {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  height: 60vh;
+  padding: 100px 10px 100px 10px;
+  overflow-y: auto;
+}
+
 .content-container {
   display: flex;
   flex-wrap: wrap;
@@ -181,6 +192,35 @@ footer {
     background: none;
     border: 1px solid gray;
     border-radius: 5px;
+  }
+
+.card-container {
+  display: grid;
+  grid-template-rows: 125px 125px;
+  grid-template-columns: 175px;
+  width: 175px;
+  height: 250px;
+  margin: 15px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 11px 11px #202020;
+  cursor: crosshair;
+  transition: transform .2s;
+}
+  .card-container:hover {
+    transform: scale(1.05);
+  }
+  .card-container-top {
+    background-color: #36454F;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+  }
+  .card-container-bottom {
+    padding: 0px 8px 0px 8px;
+    text-align: left;
+    background-color: black;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
   }
 
 .dropdown {
