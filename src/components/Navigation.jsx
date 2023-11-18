@@ -36,8 +36,8 @@ export default function Navigation(props) {
           </button>
         </nav>
         <div>
-          <img src='icons/FL_logo_text_color.svg' className="logo-icons" style={{ marginRight: '-50px', display: styles }}/>
-          <img src='icons/monotone_icon.svg' className="logo-icons" style={{ transform: 'scale(1)', display: styles }}/>
+          <img onClick={handleClick} src='icons/FL_logo_text_color.svg' className="logo-icons" style={{ height: '25px', marginBottom: '22px', display: styles }}/>
+          <img onClick={handleClick} src='icons/monotone_icon.svg' className="logo-icons" style={{ display: styles }}/>
         </div>
       </div>
     </header>

@@ -5,8 +5,8 @@ export default function ArticleDetail(props){
 
   return (
     <>
-      <div style={{ color: "gray" }}>
-      <h2 style={{color: `silver`}}>{title}</h2>
+      <div style={{ color: 'rgba(255, 255, 255, .87)' }}>
+      <h2 style={{color: `#D4B16A`}}>{title}</h2>
         {content}
       </div>
       <div>

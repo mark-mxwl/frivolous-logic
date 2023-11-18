@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGears } from "@fortawesome/free-solid-svg-icons";
 
 export default function GameDetail(props) {
   const [gameData, setGameData] = useState();
   const { id } = props;
-  const gears = <FontAwesomeIcon icon={faGears} class="social-icons" />
   const styles = { color: 'gray', fontSize: '.7em', fontStyle: 'italic' }
 
   async function getGames() {
@@ -31,10 +28,10 @@ export default function GameDetail(props) {
 
   return (
     <>    
-      <div className="content-container" style={{marginTop: '-60px'}}>
+      <div className="content-container" style={{marginTop: '-70px'}}>
         <span>
         <h2 style={{ color: 'silver' }}>{gameData?.name} ({gameData?.released.slice(0, 4)})</h2>
-          <p style={{ fontSize: '.7em' }}>
+          <p style={{ fontSize: '.8em' }}>
             <b>STUDIO:</b>{" "}
             {gameData?.developers.map((developer) => developer.name).join(", ")}
             <br />
@@ -52,7 +49,7 @@ export default function GameDetail(props) {
           </p>
         </span>
         <img src={gameData?.background_image} style={{ maxWidth: '720px' }} />
-        <p style={{ color: 'gray' }}>{gameData?.description_raw}</p>
+        <p style={{ color: 'rgba(255, 255, 255, .87)' }}>{gameData?.description_raw}</p>
         <p style={styles}>Game data sourced from {" "} 
           <a href="https://rawg.io/apidocs" target="_blank">RAWG API</a>
         </p>

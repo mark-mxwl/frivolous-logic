@@ -35,7 +35,7 @@ export default function App() {
         quoteAuthor={randomQuote[0]?.author}
       />
 
-      <Footer handleClick={handleClick} />
+      {/* <Footer handleClick={handleClick} /> */}
     </>
   );
 }

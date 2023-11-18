@@ -36,7 +36,7 @@ export default function Puzzles() {
 
   return (
     <>
-      <div className="page-content" style={{marginBottom: '200px'}}>
+      <div className="page-content" style={{paddingBottom: '100px'}}>
         <div className="puzzle-presentation-card">
           <h2 style={{ fontSize: '1.3em' }}>{puzzleSelection.name}</h2>
           <h3 style={{ color: 'gray' }}>[by {puzzleSelection.author}]</h3>

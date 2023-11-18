@@ -8,7 +8,7 @@ export default function DevConnect() {
     <div className="page-content">
       <div className="content-container">
         <p>
-          <i>Frivolous Logic</i> was created by frontend engineer Mark Maxwell 
+          <i>Frivolous Logic</i> was created by frontend software engineer Mark Maxwell 
           using JavaScript, React, CSS, and Vite. Data is consumed from{" "}
           <a href="https://rawg.io/apidocs" style={styles}>
             Rawg API

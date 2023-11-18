@@ -5,7 +5,7 @@ import Connect from "./Connect";
 
 export default function MainContent(props) {
   const { aTrig, newQuote, quoteAuthor } = props;
-  const styles = {justifyContent: 'space-evenly', marginTop: '0', overflowY: 'auto'}
+  const styles = {justifyContent: 'space-evenly', alignItems: 'center', overflowY: 'auto'}
 
   if (aTrig === "puzzles") {
     return <Puzzles />
