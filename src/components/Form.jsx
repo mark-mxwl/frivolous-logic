@@ -10,15 +10,15 @@ export default function Form() {
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
-    setNewUser((prev) => ({ ...prev, [name]: value }));
+    const { id, value } = event.target;
+    setNewUser((prev) => ({ ...prev, [id]: value }));
   };
 
   const handleSubmit = (event) => {
     setHasSubmitted(true);
     event.preventDefault();
-    console.log("Thanks for signing up!");
-    console.log(newUser);
+    // console.log("Thanks for the note!");
+    // console.log(newUser);
   };
 
   return !hasSubmitted ? (
@@ -26,8 +26,7 @@ export default function Form() {
       <form
         id="form"
         method="POST"
-        action={`mailto:${import.meta.env.MAILTO_RECIPIENT}`}
-        encType="multipart/form-data"
+        action={`https://formsubmit.co/${import.meta.env.MAILTO_RECIPIENT}`}
         onSubmit={handleSubmit}
       >
         <label htmlFor="name">Name: </label>
@@ -69,7 +68,7 @@ export default function Form() {
     </div>
   ) : (
     <div style={{marginTop: '100px'}}>
-      <h2 style={{color: 'silver'}}>{`Thanks for the note, ${newUser.name}!`}</h2>
+      <h2 style={{color: 'silver'}}>{`Thanks for the note!`}</h2>
     </div>
   );
 }

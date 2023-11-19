@@ -235,6 +235,7 @@ textarea {
   position: absolute;
   right: 0;
   margin-top: 70px;
+  margin-right: -30px;
   color: gray;
   font-size: 2em;
   cursor: crosshair;

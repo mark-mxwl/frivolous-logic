@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Form from "./Form";
-// import About from "./About";
 
 export default function DevConnect() {
   const styles = { textDecoration: "none", fontWeight: "bold" };
@@ -11,7 +10,9 @@ export default function DevConnect() {
   return (
     <div className="page-content">
       <div className="about-overlay" style={{ visibility: `${overlay}` }}>
-        <h1 className="x-btn" onClick={() => setOverlay("hidden")}>X</h1>
+        <div style={{paddingBottom: '20px'}}>
+          <h1 className="x-btn" onClick={() => setOverlay("hidden")}>X</h1>
+        </div>
         <p style={{ marginTop: "100px" }}>
           <img className="img-about" src="images/Mark_about_pic_1.jpg" />
           <br />
@@ -105,7 +106,7 @@ export default function DevConnect() {
             }
           />
         </div>
-        {/* <Form /> */}
+        <Form />
       </div>
     </div>
   );
