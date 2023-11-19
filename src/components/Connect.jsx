@@ -13,7 +13,7 @@ export default function DevConnect() {
       <div className="about-overlay" style={{ visibility: `${overlay}` }}>
         <h1 className="x-btn" onClick={() => setOverlay("hidden")}>X</h1>
         <p style={{ marginTop: "100px" }}>
-          <img className="img-about" src="src/assets/Mark_about_pic_1.jpg" />
+          <img className="img-about" src="images/Mark_about_pic_1.jpg" />
           <br />
           The twistiest paths are often the truest. I spent over a decade as a
           songwriter, music producer, and film composer before transitioning
@@ -75,12 +75,12 @@ export default function DevConnect() {
           <a href="https://www.linkedin.com/in/mark-mxwl/" style={styles}>
             LinkedIn
           </a>
-          ,{" "}
+          , or{" "}
           <a href="https://instagram.com/_mark_maxwell" style={styles}>
             Instagram
           </a>
-          ,{" "}
-          or via the form below. Thanks for exploring!
+          .{" "}
+          Thanks for exploring!
         </p>
         <div>
           <FontAwesomeIcon
@@ -105,7 +105,7 @@ export default function DevConnect() {
             }
           />
         </div>
-        <Form />
+        {/* <Form /> */}
       </div>
     </div>
   );
