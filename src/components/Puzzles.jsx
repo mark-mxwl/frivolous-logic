@@ -10,7 +10,7 @@ export default function Puzzles() {
       desc: "Click PLAY. Set all slots to the color that appears on your first click.",
       puzzle: <Monotone />,
       icon: "monotone_icon.svg",
-      author: "MVMXL"
+      author: "Mark Maxwell"
     },
     {
       name: "Mystic Square",
