@@ -15,18 +15,28 @@ export default function Form() {
   };
 
   const handleSubmit = (event) => {
+    
+    fetch("https://formsubmit.co/ajax/eb8c43897fc22afcc0ab12a33c06407f", {
+      method: "POST",
+      headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+      },
+      body: JSON.stringify(newUser)
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.log(error));
+
     setHasSubmitted(true);
     event.preventDefault();
-    // console.log("Thanks for the note!");
-    // console.log(newUser);
+
   };
 
   return !hasSubmitted ? (
     <div>
       <form
         id="form"
-        method="POST"
-        action={`https://formsubmit.co/${import.meta.env.MAILTO_RECIPIENT}`}
         onSubmit={handleSubmit}
       >
         <label htmlFor="name">Name: </label>
@@ -58,6 +68,7 @@ export default function Form() {
         <textarea
           id="message"
           name="message"
+          type="text"
           value={newUser.message}
           onChange={handleChange}
         />
@@ -68,7 +79,7 @@ export default function Form() {
     </div>
   ) : (
     <div style={{marginTop: '100px'}}>
-      <h2 style={{color: 'silver'}}>{`Thanks for the note!`}</h2>
+      <h2 style={{color: 'silver'}}>{`Thanks for the note, ${newUser.name}!`}</h2>
     </div>
   );
 }
