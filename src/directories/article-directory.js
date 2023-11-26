@@ -4,6 +4,7 @@ import { puzzleBoxArticle2 } from "../text-content/article2"
 import { puzzleArticle3 } from "../text-content/article3"
 import { towerOfHanoiArticle4 } from "../text-content/article4"
 import { mysticSquareArticle5 } from "../text-content/article5"
+import { tangramArticle6 } from "../text-content/article6"
 
 export const loreArray = [
     {
@@ -50,5 +51,14 @@ export const loreArray = [
         urlSlug: "15_Puzzle",
         icon: "logic_gate_icon_5.svg",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/15-Puzzle_solved.png/440px-15-Puzzle_solved.png"
+    },
+    {
+        title: "Ancient Polygons from the East",
+        name: "Tangram",
+        id: 6,
+        content: tangramArticle6,
+        urlSlug: "Tangram",
+        icon: "logic_gate_icon_6.svg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Tangram_set_00.jpg/600px-Tangram_set_00.jpg"
     }
 ]

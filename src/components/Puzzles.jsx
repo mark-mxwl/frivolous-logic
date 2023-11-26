@@ -11,39 +11,27 @@ export default function Puzzles() {
       puzzle: <Monotone />,
       icon: "monotone_icon.svg",
       author: "Mark Maxwell"
-    },
-    {
-      name: "Mystic Square",
-      id: 2,
-      desc: "Coming soon!",
-      author: "???"
-    },
-    {
-      name: "2048",
-      id: 3,
-      desc: "Coming soon!",
-      author: "???"
     }
   ];
 
   const [puzzleSelection, setPuzzleSelection] = useState(puzzleArray[0]);
 
-  function handlePuzzleClick(e) {
-    const currentObj = puzzleArray.find(({ id }) => String(id) === e.target.id);
-    setPuzzleSelection(currentObj);
-    // console.log(e);
-  }
+  // function handlePuzzleClick(e) {
+  //   const currentObj = puzzleArray.find(({ id }) => String(id) === e.target.id);
+  //   setPuzzleSelection(currentObj);
+  //   // console.log(e);
+  // }
 
   return (
     <>
-      <div className="page-content" style={{paddingBottom: '100px'}}>
+      <div className="page-content">
         <div className="puzzle-presentation-card">
           <h2 style={{ fontSize: '1.3em' }}>{puzzleSelection.name}</h2>
           <h3 style={{ color: 'gray' }}>[by {puzzleSelection.author}]</h3>
           <p>
             {puzzleSelection.desc}
           </p>
-          <div style={{marginTop: '100px'}}>
+          <div>
             {puzzleSelection.puzzle}
           </div>
         </div>

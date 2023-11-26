@@ -46,7 +46,7 @@ export default function DevConnect() {
       <div className="content-container">
         <p>
           <i>Frivolous Logic</i> was created by software engineer Mark Maxwell
-          using JavaScript, React, CSS, and Vite. Data is consumed from{" "}
+          using JavaScript and React. Data is consumed from{" "}
           <a href="https://rawg.io/apidocs" style={styles}>
             Rawg API
           </a>{" "}
@@ -76,12 +76,12 @@ export default function DevConnect() {
           <a href="https://www.linkedin.com/in/mark-mxwl/" style={styles}>
             LinkedIn
           </a>
-          , or{" "}
+          ,{" "}
           <a href="https://instagram.com/_mark_maxwell" style={styles}>
             Instagram
           </a>
-          .{" "}
-          Thanks for exploring!
+          ,{" "}
+          or via the form below. Thanks for exploring!
         </p>
         <div>
           <FontAwesomeIcon

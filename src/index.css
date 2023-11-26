@@ -28,8 +28,6 @@ nav {
 h1 {
   font-size: 2.5em;
   line-height: 1.1;
-  max-width: 60%;
-  min-width: 20%;
 }
 
 h2 {
@@ -46,10 +44,8 @@ p {
   font-size: .95em;
   line-height: 1.5;
   letter-spacing: .3px;
-  /* font-family: 'Verdana', sans-serif; */
   font-family: 'Inter', sans-serif;
   font-family: 'Libre Franklin', sans-serif;
-  /* font-family: 'Montserrat', sans-serif; */
 }
 
 img {
@@ -211,7 +207,6 @@ textarea {
     transform: none;
   }
   .form-btn:focus {
-    /* background-color: lightseagreen; */
     color: rgba(255, 255, 255, .87);
   }
 
@@ -234,8 +229,8 @@ textarea {
 .x-btn {
   position: absolute;
   right: 0;
-  margin-top: 70px;
-  margin-right: -30px;
+  margin-top: 75px;
+  margin-right: 25px;
   color: gray;
   font-size: 2em;
   cursor: crosshair;
@@ -258,6 +253,7 @@ textarea {
   background-color: #222222;
   z-index: 1;
   overflow-y: auto;
+  /* overflow-x: auto; */
 }
 
 .page-nav-horizontal {
@@ -270,12 +266,11 @@ textarea {
 .page-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   text-align: center;
-  height: 100%;
   margin-top: 115px;
   padding-top: 85px;
+  padding-bottom: 85px;
 }
 
 .page-content-alt {
@@ -293,11 +288,24 @@ textarea {
   overflow-y: auto;
 }
 
+.intro-content {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quote-box {
+  max-width: 60%;
+  min-width: 20%;
+  animation: 2s slide-right;
+}
+
 .content-container {
   display: flex;
   flex-wrap: wrap;
   margin: -100px auto 0px auto;
-  padding: 0px 20px 85px 20px;
+  padding: 0px 20px 0px 20px;
   text-align: left;
   width: 80vw;
   max-width: 720px;
@@ -358,7 +366,6 @@ textarea {
   border: solid .5px;
   border-color: gray;
   border-radius: 8px;
-  /* padding-right: 12px; */
 }
   .dropdown-content {
     display: none;
@@ -390,11 +397,15 @@ textarea {
     cursor: crosshair;
   }
 
-.quote-box {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 60%;
-  min-width: 20%;
+
+
+@keyframes slide-right {
+  from{
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 25%;
+  }
 }
 
 .social-icons {
@@ -433,6 +444,15 @@ textarea {
   width: 280px;
   text-align: left;
   margin: -110px auto 0px auto;
+  animation: 1s slide-left;
+}
+@keyframes slide-left {
+  from{
+    margin-right: -100%;
+  }
+  to {
+    margin-right: 25%;
+  }
 }
 
 .puzzle-container {
@@ -443,7 +463,7 @@ textarea {
   text-align: center;
   width: 280px;
   height: 280px;
-  margin: -70px auto 0px auto;
+  margin: 25px auto 0px auto;
   padding-bottom: 45px;
   border: .5px solid #36454F;
   outline: 1px solid #36454F;
@@ -522,13 +542,30 @@ textarea {
 @media screen and (max-width: 720px) {
 
   .about-overlay {
-    width: 100%;
+    width: 95%;
     margin-right: auto;
     margin-left: auto;
   }
-  
+
+  h1 {
+    transition: transform .5s;
+    transform: scale(.9);
+  }
+
   p {
     width: 95%;
+  }
+
+  .x-btn {
+    margin-right: 35px;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .intro-content {
+    margin-top: -85px;
   }
 
 }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Navigation from "./components/Navigation";
 import MainContent from "./components/MainContent";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import "./index.css";
 
 export default function App() {
