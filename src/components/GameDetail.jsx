@@ -2,28 +2,62 @@ import { useState, useEffect } from "react";
 
 export default function GameDetail(props) {
   const [gameData, setGameData] = useState();
+  const [screenshots, setScreenshots] = useState();
   const { id } = props;
-  const styles = { color: 'gray', fontSize: '.7em', fontStyle: 'italic' }
+  const styles = { 
+    color: 'gray', 
+    fontSize: '.7em', 
+    fontStyle: 'italic' 
+  }
+  const imgStyles = {
+    maxWidth: '100%',
+    height: 'auto'
+  }
 
   async function getGames() {
-    const response = await fetch(
-      `https://api.rawg.io/api/games/${id ? id : 2873}?key=${
-        import.meta.env.VITE_RAWG_API_KEY
-      }`,
-      {
-        method: "GET",
-      }
-    );
-    const data = await response.json();
-    // console.log(data)
-    // console.log(data.screenshots_count)
-    return data;
+    try {
+      const response = await fetch(
+        `https://api.rawg.io/api/games/${id ? id : 2873}?key=${
+          import.meta.env.VITE_RAWG_API_KEY
+        }`,
+        {
+          method: "GET",
+        }
+      );
+      const data = await response.json();
+      return data;
+    } catch (error) {
+        console.log('Error:', error)
+    }
+  }
+
+  async function getScreenshots() {
+    try {
+      const response = await fetch(
+        `https://api.rawg.io/api/games/${id ? id : 2873}/screenshots?key=${
+          import.meta.env.VITE_RAWG_API_KEY
+        }`,
+        {
+          method: "GET",
+        }
+      );
+      const data = await response.json();
+      return data;
+    } catch {
+        console.log('Error:', error)
+    }
   }
 
   useEffect(() => {
+
     getGames().then((data) => {
       setGameData(data);
     });
+
+    getScreenshots().then((data) => {
+      setScreenshots(data);
+    });
+
   }, [id]);
 
   return (
@@ -48,7 +82,17 @@ export default function GameDetail(props) {
             {gameData?.stores.map((store) => store.store.name).join(", ")}
           </p>
         </span>
-        <img src={gameData?.background_image} style={{ maxWidth: '720px' }} />
+        <div className="screenshot-grid">
+          {
+            screenshots?.results.map((shot) => {
+              return (
+                <img src={shot.image} 
+                className="image1" style={imgStyles} 
+                />
+              )
+            })
+          }
+        </div>
         <p style={{ color: 'rgba(255, 255, 255, .87)' }}>{gameData?.description_raw}</p>
         <p style={styles}>Game data sourced from {" "} 
           <a href="https://rawg.io/apidocs" target="_blank">RAWG API</a>

@@ -6,7 +6,6 @@ export default function LoreCard(props) {
     width: "100%",
     height: "100%",
     objectFit: "cover",
-    opacity: "60%",
     borderBottomLeftRadius: "0px",
     borderBottomRightRadius: "0px",
   };

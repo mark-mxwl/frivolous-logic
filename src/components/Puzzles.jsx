@@ -16,12 +16,6 @@ export default function Puzzles() {
 
   const [puzzleSelection, setPuzzleSelection] = useState(puzzleArray[0]);
 
-  // function handlePuzzleClick(e) {
-  //   const currentObj = puzzleArray.find(({ id }) => String(id) === e.target.id);
-  //   setPuzzleSelection(currentObj);
-  //   // console.log(e);
-  // }
-
   return (
     <>
       <div className="page-content">

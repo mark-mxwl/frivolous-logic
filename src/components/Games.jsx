@@ -9,7 +9,6 @@ export default function Games() {
 
   function handleGameClick(e) {
     setSelectedGame(e.target.id);
-    // console.log(e);
   }
 
   return (

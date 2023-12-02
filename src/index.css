@@ -62,6 +62,14 @@ img {
   height: 200px;
 }
 
+.screenshot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 7px;
+  margin-top: 10px;
+}
+
 a {
   color: gray;
 }
@@ -74,7 +82,7 @@ a {
   }
 
 button {
-  border-radius: 8px;
+  border-radius: 20px;
   border: .5px solid;
   border-color: transparent;
   color: silver;
@@ -87,14 +95,12 @@ button {
   transition: border-color .5s;
 }
   button:hover {
-    border-radius: 8px;
     border: .5px solid;
     border-color: #D4B16A;
-    transform: scale(1.1);
   }
   button:focus {
-    border-color: silver;
-    color: #36454F;
+    background-color: #222222;
+    color: silver;
   }
 
 header {
@@ -194,37 +200,36 @@ textarea {
 
 .form-btn {
   font-size: 17px;
-  height: 2em;
-  border-radius: 8px;
+  /* height: 2em; */
+  border-radius: 20px;
   border: solid #D4B16A 1px;
   width: 80vw;
   max-width: 720px;
-  padding: 5px 8px 5px 8px;
+  padding: 0.5em 1em;
+  margin: 0.5em;
   
 }
   .form-btn:hover {
     border: solid rgba(255, 255, 255, .87) 1px;
-    transform: none;
   }
   .form-btn:focus {
+    background-color: #D4B16A;
     color: rgba(255, 255, 255, .87);
   }
 
 .about-btn {
-  font-size: 17px;
-  height: 2em;
-  border-radius: 8px;
-  border: none;
+  border-radius: 20px;
+  border: .5px solid #222222;
   background-color: #222222;
   width: fit-content;
-  max-width: 720px;
-  padding: 0px 12px 0px 12px;
+  padding: 0.5em 1em;
+  margin: 0.5em;
   font-size: .9em;
   text-align: center;
 }
-  .about-btn:hover {
+  /* .about-btn:hover {
     transform: none;
-  }
+  } */
 
 .x-btn {
   position: absolute;
@@ -247,13 +252,12 @@ textarea {
   margin-right: 50vw;
   text-align: left;
   line-height: 1.7em;
-  padding: 15px 15px 15px 45px;
+  padding: 15px 15px 0px 45px;
   height: 100vh;
   width: 50vw;
   background-color: #222222;
   z-index: 1;
   overflow-y: auto;
-  /* overflow-x: auto; */
 }
 
 .page-nav-horizontal {
@@ -299,6 +303,14 @@ textarea {
   max-width: 60%;
   min-width: 20%;
   animation: 2s slide-right;
+}
+@keyframes slide-right {
+  from{
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 25%;
+  }
 }
 
 .content-container {
@@ -396,17 +408,6 @@ textarea {
     color: gray;
     cursor: crosshair;
   }
-
-
-
-@keyframes slide-right {
-  from{
-    margin-left: -100%;
-  }
-  to {
-    margin-left: 25%;
-  }
-}
 
 .social-icons {
   height: 40px;
@@ -566,6 +567,10 @@ textarea {
 
   .intro-content {
     margin-top: -85px;
+  }
+
+  .screenshot-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
 }

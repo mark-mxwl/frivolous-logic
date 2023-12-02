@@ -10,12 +10,15 @@ export default function DevConnect() {
   return (
     <div className="page-content">
       <div className="about-overlay" style={{ visibility: `${overlay}` }}>
-        <div style={{paddingBottom: '20px'}}>
+        <div style={{paddingBottom: '40px'}}>
           <h1 className="x-btn" onClick={() => setOverlay("hidden")}>X</h1>
         </div>
-        <p style={{ marginTop: "100px" }}>
+        <div style={{paddingTop: '80px'}}>
           <img className="img-about" src="images/Mark_about_pic_1.jpg" />
-          <br />
+        </div>
+        <h2>Mark Maxwell</h2>
+        <h3 style={{color: '#D4B16A'}}>Software Engineer</h3>
+        <p>
           The twistiest paths are often the truest. I spent over a decade as a
           songwriter, music producer, and film composer before transitioning
           into the world of software development. My passion for technology and
@@ -34,14 +37,12 @@ export default function DevConnect() {
           still very much in its infancy, but I hope that one day it will serve
           as a boundless portal for puzzle exploration and education.
         </p>
-        <p>
+        <p style={{paddingBottom: '40px'}}>
           If you're curious to know more about my music, visit{" "}
           <a href="https://www.thisismarkmaxwell.com" target="_blank">
             www.thisismarkmaxwell.com
           </a>
         </p>
-        <br />
-        <br />
       </div>
       <div className="content-container">
         <p>

@@ -60,8 +60,6 @@ export default function Monotone() {
     ));
     getRandomColors();
     setWinningColor(getWinningColor)
-    
-    console.log(slotColor)
   };
 
   function handleSlotClick(e) {

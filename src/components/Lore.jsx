@@ -12,7 +12,6 @@ export default function Lore() {
   function handleLoreClick(e) {
     const currentObj = loreArray.find(({ id }) => String(id) === e.target.id);
     setSelectedArticle(currentObj);
-    // console.log(currentObj)
   }
 
   function handleArrowClick() {

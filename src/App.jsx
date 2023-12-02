@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Navigation from "./components/Navigation";
 import MainContent from "./components/MainContent";
-// import Footer from "./components/Footer";
 import "./index.css";
 
 export default function App() {
@@ -9,19 +8,24 @@ export default function App() {
   const [aTrig, setATrig] = useState("");
 
   useEffect(() => {
+    
     async function getQuotes() {
-      const response = await fetch(
-        "https://api.quotable.io/quotes/random?tags=technology"
-      );
-      const data = await response.json();
-      setRandomQuote(data);
+      try {
+        const response = await fetch(
+          "https://api.quotable.io/quotes/random?tags=technology"
+        );
+        const data = await response.json();
+        setRandomQuote(data);
+      } catch (error) {
+          console.log('Error:', error)
+      }
     }
     getQuotes();
+
   }, []);
 
   function handleClick(e) {
     setATrig(e.target.id);
-    // console.log(e.target.id)
   }
 
   return (
@@ -34,8 +38,6 @@ export default function App() {
         newQuote={randomQuote[0]?.content}
         quoteAuthor={randomQuote[0]?.author}
       />
-
-      {/* <Footer handleClick={handleClick} /> */}
     </>
   );
 }
