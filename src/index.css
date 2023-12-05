@@ -122,6 +122,39 @@ header {
   margin-right: 15px;
 }
 
+.hamburger-a {
+  position: fixed;
+  left: 0;
+  top: 0;
+  font-size: 1.5em;
+  margin: 20px 0px 0px 25px;
+  transform: rotate(90deg);
+  z-index: 1;
+}
+
+.hamburger-nav-dropdown {
+  display: block;
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-top: 70px;
+  border-radius: 0px 0px 20px 0px;
+  height: 100vh;
+  width: 200px;
+  background-color: #1a1a1a;
+}
+  .hamburger-item {
+    display: block;
+    color: inherit;
+    line-height: 3em;
+    text-align: left;
+    margin-left: 15px;
+  }
+  .hamburger-item:hover {
+    color: silver;
+  }
+
 footer {
   position: fixed;
   bottom: 0;
@@ -200,7 +233,6 @@ textarea {
 
 .form-btn {
   font-size: 17px;
-  /* height: 2em; */
   border-radius: 20px;
   border: solid #D4B16A 1px;
   width: 80vw;
@@ -227,9 +259,6 @@ textarea {
   font-size: .9em;
   text-align: center;
 }
-  /* .about-btn:hover {
-    transform: none;
-  } */
 
 .x-btn {
   position: absolute;
@@ -432,13 +461,13 @@ textarea {
     transform: scale(1.1);
   }
 
-.sound-on {
+/* .sound-on {
   color: silver;
 }
 
 .sound-off {
   color: #36454F;
-}
+} */
 
 .puzzle-presentation-card {
   display: block;
@@ -527,14 +556,9 @@ textarea {
     padding: 0;
   }
 
-  button {
-    padding: 0.3em .6em;
-    font-size: .8em;
-  }
-
   .header-container {
     height: 75px;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
   }
 

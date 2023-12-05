@@ -6,6 +6,7 @@ import "./index.css";
 export default function App() {
   const [randomQuote, setRandomQuote] = useState([]);
   const [aTrig, setATrig] = useState("");
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     
@@ -28,12 +29,25 @@ export default function App() {
     setATrig(e.target.id);
   }
 
+  function handleMobileClick(e) {
+    setATrig(e.target.id);
+    setToggle((prev) => !prev)
+  }
+
+  function handleHamburgerClick() {
+    setToggle((prev) => !prev)
+  }
+
   return (
     <>
-      <Navigation handleClick={handleClick} />
+      <Navigation 
+        handleClick={handleClick}
+        handleMobileClick={handleMobileClick} 
+        handleHamburgerClick={handleHamburgerClick}
+        toggle={toggle}
+      />
 
       <MainContent
-        handleClick={handleClick}
         aTrig={aTrig}
         newQuote={randomQuote[0]?.content}
         quoteAuthor={randomQuote[0]?.author}

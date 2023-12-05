@@ -47,7 +47,7 @@ export default function DevConnect() {
       <div className="content-container">
         <p>
           <i>Frivolous Logic</i> was created by software engineer Mark Maxwell
-          using JavaScript and React. Data is consumed from{" "}
+          in JS/React. Data is consumed from{" "}
           <a href="https://rawg.io/apidocs" style={styles}>
             Rawg API
           </a>{" "}
@@ -69,10 +69,10 @@ export default function DevConnect() {
         </button>
         <p>
           This project is actively in development. To contribute to{" "}
-          <i>Frivolous Logic</i> or offer suggestions for future content, connect with Mark on{" "}
+          <i>Frivolous Logic</i> or offer suggestions for content, connect with Mark on{" "}
           <a href="https://github.com/mark-mxwl" style={styles}>
             GitHub
-          </a>{" "}
+          </a>
           ,{" "}
           <a href="https://www.linkedin.com/in/mark-mxwl/" style={styles}>
             LinkedIn
