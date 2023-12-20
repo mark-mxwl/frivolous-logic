@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faStop } from "@fortawesome/free-solid-svg-icons";
 
 export default function Monotone() {
-
   const [slotColor, setSlotColor] = useState([
     {
       id: 1,
@@ -29,9 +28,14 @@ export default function Monotone() {
 
   const [toggle, setToggle] = useState(false);
   const [intervalDecrement, setIntervalDecrement] = useState();
-  const [winningColor, setWinningColor] = useState(["red", "blue", "purple", "green"]);
-  const winningMessage = "YOU WIN!"
-  const styles = {padding: '0.4em .8em', fontSize: '.9em'}
+  const [winningColor, setWinningColor] = useState([
+    "red",
+    "blue",
+    "purple",
+    "green",
+  ]);
+  const winningMessage = "YOU WIN!";
+  const styles = { padding: "0.4em .8em", fontSize: ".9em" };
 
   useEffect(() => {
     if (toggle === true) {
@@ -44,78 +48,84 @@ export default function Monotone() {
 
   function getRandomColors() {
     return slotColor.toSorted(() => 0.5 - Math.random());
-  };
+  }
 
   function getWinningColor() {
-    return winningColor.toSorted(() => 0.5 - Math.random())
+    return winningColor.toSorted(() => 0.5 - Math.random());
   }
 
   function handleStartClick(e) {
     setToggle((prev) => !prev);
     setIntervalDecrement(800);
-    setSlotColor((prevSlots) => prevSlots.map((slot) => {
-      return (
-      {...slot, isHeld: false}
-      )}
-    ));
+    setSlotColor((prevSlots) =>
+      prevSlots.map((slot) => {
+        return { ...slot, isHeld: false };
+      })
+    );
     getRandomColors();
-    setWinningColor(getWinningColor)
-  };
+    setWinningColor(getWinningColor);
+  }
 
   function handleSlotClick(e) {
-    const currentObj = slotColor.find(({ id, isHeld }) => String(id) === e.target.id && isHeld === isHeld);
+    const currentObj = slotColor.find(
+      ({ id, isHeld }) => String(id) === e.target.id && isHeld === isHeld
+    );
     const index = currentObj.id;
 
-    setIntervalDecrement((prev) => prev >= 400 ? prev - 100 : prev);
-    setSlotColor((prevSlots) => prevSlots.map((slot) => {
-      return (
-        slot.id === index ?
-      {...slot, isHeld: true} : slot
-      )}
-    ));
-  };
+    setIntervalDecrement((prev) => (prev >= 350 ? prev - 150 : prev));
+    setSlotColor((prevSlots) =>
+      prevSlots.map((slot) => {
+        return slot.id === index ? { ...slot, isHeld: true } : slot;
+      })
+    );
+  }
 
   return (
     <div className="puzzle-container">
-      <FontAwesomeIcon 
+      <FontAwesomeIcon
         icon={toggle ? faStop : faPlay}
         id="start-btn"
         className="social-icons"
         onClick={handleStartClick}
       />
-      {slotColor.every(color => color.isHeld === true) ? 
-        <div style={{margin: 'auto', padding: 0}}>
+      {slotColor.every((color) => color.isHeld === true) ? (
+        <div style={{ margin: "auto", padding: 0 }}>
           <h2>{winningMessage}</h2>
-          <button onClick={handleStartClick} style={styles}>Play Again?</button>
-        </div> 
-        : 
-        <div className="diamond-container">
-          {toggle === true ? slotColor.map((color) => {
-            return (
-              <div
-                id={color.id}
-                key={color.id}
-                className={color.isHeld ? `diamond ${winningColor[0]}` : `diamond ${color.value}`}
-                style={{cursor: 'crosshair'}}
-                onClick={handleSlotClick}
-              ></div>
-            )
-            })
-            :
-            slotColor.map((color) => {
-              return (
-                <div
-                  id={color.id}
-                  key={color.id}
-                  className={`diamond`}
-                  style={{cursor: 'crosshair'}}
-                  onClick={handleSlotClick}
-                ></div>
-              )
-            })
-          }
+          <button onClick={handleStartClick} style={styles}>
+            Play Again?
+          </button>
         </div>
-      }
+      ) : (
+        <div className="diamond-container">
+          {toggle === true
+            ? slotColor.map((color) => {
+                return (
+                  <div
+                    id={color.id}
+                    key={color.id}
+                    className={
+                      color.isHeld
+                        ? `diamond ${winningColor[0]}`
+                        : `diamond ${color.value}`
+                    }
+                    style={{ cursor: "crosshair" }}
+                    onClick={handleSlotClick}
+                  ></div>
+                );
+              })
+            : slotColor.map((color) => {
+                return (
+                  <div
+                    id={color.id}
+                    key={color.id}
+                    className={`diamond`}
+                    style={{ cursor: "crosshair" }}
+                    onClick={handleSlotClick}
+                  ></div>
+                );
+              })}
+        </div>
+      )}
     </div>
   );
-};
+}
