@@ -49,7 +49,8 @@ export default function DevConnect() {
       </div>
       <div className="content-container">
         <p>
-          <i>Frivolous Logic</i> was created by software engineer Mark Maxwell
+          <i>Frivolous Logic</i> was created by{" "}
+          <a onClick={() => setOverlay("visible")}>Mark Maxwell</a>{" "}
           in JS/React. Data is consumed from{" "}
           <a href="https://rawg.io/apidocs" style={styles}>
             Rawg API
@@ -67,12 +68,9 @@ export default function DevConnect() {
           </a>
           .
         </p>
-        <button className="about-btn" onClick={() => setOverlay("visible")}>
-          About the creator.
-        </button>
         <p>
           This project is actively in development. To contribute to{" "}
-          <i>Frivolous Logic</i> or offer suggestions for content, connect with
+          <i>Frivolous Logic</i> or offer suggestions for future content, connect with
           Mark on{" "}
           <a href="https://github.com/mark-mxwl" style={styles}>
             GitHub

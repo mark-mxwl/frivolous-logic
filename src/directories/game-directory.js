@@ -9,6 +9,10 @@ export const gameTitles = [
         id: 12929
     },
     {
+        name: "The Talos Principle 2",
+        id: 961200
+    },
+    {
         name: "Epitasis",
         id: 44904
     },
@@ -23,6 +27,10 @@ export const gameTitles = [
     {
         name: "Lightmatter",
         id: 272427
+    },
+    {
+        name: "Infinifactory",
+        id: 2937
     },
     {
         name: "The House of Da Vinci",

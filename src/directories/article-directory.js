@@ -5,6 +5,7 @@ import { puzzleArticle3 } from "../text-content/article3"
 import { towerOfHanoiArticle4 } from "../text-content/article4"
 import { mysticSquareArticle5 } from "../text-content/article5"
 import { tangramArticle6 } from "../text-content/article6"
+import { rubiksArticle7 } from "../text-content/article7"
 
 export const loreArray = [
     {
@@ -35,7 +36,7 @@ export const loreArray = [
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Raetselkreuz.jpg/440px-Raetselkreuz.jpg"
     },
     {
-        title: "Tower of Hanoi",
+        title: "Far Too Many Towers of Hanoi",
         name: "Tower of Hanoi",
         id: 4,
         content: towerOfHanoiArticle4,
@@ -60,5 +61,14 @@ export const loreArray = [
         urlSlug: "Tangram",
         icon: "logic_gate_icon_6.svg",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Tangram_set_00.jpg/600px-Tangram_set_00.jpg"
+    },
+    {
+        title: "Mysteries of the Magic Cube",
+        name: "Rubik's Cube",
+        id: 7,
+        content: rubiksArticle7,
+        urlSlug: "Rubik's_Cube",
+        icon: "logic_gate_icon_7.svg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Rubik%27s_cube.svg/220px-Rubik%27s_cube.svg.png"
     }
 ]

@@ -71,10 +71,10 @@ img {
 }
 
 a {
-  color: gray;
+  color: silver;
 }
   a:hover {
-    color: silver;
+    color: gray;
     cursor: crosshair;
   }
   a:active {

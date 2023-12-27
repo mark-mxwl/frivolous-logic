@@ -1,29 +1,33 @@
 import { useState, useEffect } from "react";
 import { loreArray } from "../directories/article-directory.js";
 import ArticleDetail from "./ArticleDetail";
-import LoreCard from "./LoreCard.jsx"
-import {faArrowLeft} from "@fortawesome/free-solid-svg-icons"
+import LoreCard from "./LoreCard.jsx";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Lore() {
   const [selectedArticle, setSelectedArticle] = useState();
-  let i = 0
-  
+  let i = 0;
+
   function handleLoreClick(e) {
     const currentObj = loreArray.find(({ id }) => String(id) === e.target.id);
     setSelectedArticle(currentObj);
+    window.scrollTo(0, 0);
   }
 
   function handleArrowClick() {
-    setSelectedArticle()
+    setSelectedArticle();
   }
 
-  return (
-    selectedArticle ?
+  return selectedArticle ? (
     <>
       <div className="page-content">
         <div className="content-container">
-          <FontAwesomeIcon icon={faArrowLeft} className="social-icons" onClick={handleArrowClick} />
+          <FontAwesomeIcon
+            icon={faArrowLeft}
+            className="social-icons"
+            onClick={handleArrowClick}
+          />
           <ArticleDetail
             title={selectedArticle?.title}
             name={selectedArticle?.name}
@@ -34,26 +38,21 @@ export default function Lore() {
         </div>
       </div>
     </>
-      :
+  ) : (
     <>
       <div className="page-content-alt">
-        {loreArray.map(lore => {
+        {loreArray.map((lore) => {
           return (
-              <LoreCard
-                i={i <= 4 && i++}
-                handleLoreClick={handleLoreClick}
-                title={lore.title}
-                name={lore.name}
-                id={lore.id}
-                key={`${lore.id}--key`}
-                content={lore.content}
-                urlSlug={lore.urlSlug}
-                icon={lore.icon}
-                image={lore.image}
-              />
-          )
-          })
-        }
+            <LoreCard
+              handleLoreClick={handleLoreClick}
+              title={lore.title}
+              id={lore.id}
+              key={`${lore.id}--key`}
+              icon={lore.icon}
+              image={lore.image}
+            />
+          );
+        })}
       </div>
     </>
   );
